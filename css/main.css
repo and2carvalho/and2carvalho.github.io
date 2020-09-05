@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(226, 225, 225);
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: honeydew;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
