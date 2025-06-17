@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André C.A. de Carvalho - Web Developer</title>
+    <style>
+        :root {
+            --primary: #ff6f61;
+            --background: #f4f4f9;
+            --text: #333;
+            --card-bg: #fff;
+            --header-bg: #333;
+            --header-text: #fff;
+        }
+
+        [data-theme="dark"] {
+            --primary: #ff6f61;
+            --background: #181a1b;
+            --text: #f4f4f9;
+            --card-bg: #23272a;
+            --header-bg: #23272a;
+            --header-text: #ff6f61;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--header-bg);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: auto;
+            padding: 0.5rem 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--header-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .nav-links a.active,
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--header-text);
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin-left: 1rem;
+            transition: color 0.2s;
+        }
+
+        /* Hamburger for mobile */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background: var(--header-text);
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: var(--header-bg);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 180px;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 2rem 0 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 10px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #e65a50;
+        }
+
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #ddd;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s, transform 0.7s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        #about p {
+            text-align: center;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        #skills li {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .project {
+            background: var(--card-bg);
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            transition: box-shadow 0.2s;
+        }
+
+        .project:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .project h3 {
+            margin-top: 0;
+        }
+
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        #contact {
+            text-align: center;
+        }
+
+        #contact a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        #contact a:hover {
+            color: #e65a50;
+        }
+
+        .contact-form {
+            margin: 1.5rem auto 0 auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            font-size: 1rem;
+            background: var(--card-bg);
+            color: var(--text);
+            transition: border 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+        }
+
+        .contact-form button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 0;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .contact-form button:hover {
+            background: #e65a50;
+        }
+
+        .form-success {
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: var(--header-bg);
+            color: var(--header-text);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div style="font-weight:bold; font-size:1.2rem; color:var(--primary);">André C.A. de Carvalho</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+            <div class="hamburger" id="hamburger" aria-label="Open menu" tabindex="0">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>André C.A. de Carvalho</h1>
+            <p>Web Developer</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I'm a passionate and results-driven web developer with a knack for creating elegant and efficient user
+                experiences. I love tackling challenging problems and turning innovative ideas into reality. My journey
+                in tech started with a curiosity for how things work, and it has evolved into a career where I
+                continuously learn and grow.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React</li>
+                <li>NextJs</li>
+                <li>Styled-Components</li>
+                <li>Zustand</li>
+                <li>React-query</li>
+                <li>React-native</li>
+                <li>Expo</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>MongoDB</li>
+                <li>Firebase</li>
+                <li>Docker</li>
+                <li>Git</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>SellerCenter & Painel Seller - Hubsell <small>(05/2022 - Present)</small></h3>
+                <div class="carousel" style="margin-bottom:1rem;">
+                    <button class="carousel-btn prev" aria-label="Previous image"
+                        style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.3);border:none;color:#fff;font-size:1.5rem;border-radius:50%;width:32px;height:32px;cursor:pointer;z-index:2;">&#8592;</button>
+                    <a href="https://epicomsupport.zendesk.com/hc/pt-br/articles/360004256973-Como-se-conectar-ao-Mercado-Livre-atrav%C3%A9s-do-Integra%C3%A7%C3%A3o-nativa-com-Marketplaces-da-Hubsell"
+                        target="_blank" style="display:block;">
+                        <img class="carousel-img"
+                            src="https://epicomsupport.zendesk.com/hc/article_attachments/27205595176596"
+                            alt="Project Preview 1"
+                            style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s;height:100%;object-fit:cover;" />
+                    </a>
+                    <button class="carousel-btn next" aria-label="Next image"
+                        style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.3);border:none;color:#fff;font-size:1.5rem;border-radius:50%;width:32px;height:32px;cursor:pointer;z-index:2;">&#8594;</button>
+                    <div class="carousel-dots" style="text-align:center;margin-top:8px;"></div>
+                </div>
+                <p>
+                    Working within an agile team of over 20 developers, I served as a Frontend Developer at Hubsell, a
+                    leading e-commerce integration platform. I was responsible for developing and enhancing the user
+                    interface for the Seller Center and the integration hub.
+                </p>
+                <p><strong>Technologies Used:</strong> React, Node.js, Express, MongoDB, NextJs, Styled-Components,
+                    Zustand, React Query, Firebase</p>
+            </div>
+
+
+
+            <div class="project">
+                <h3>3 Ponto Web - 3 UP Tech <small>(10/19 - 05/22)</small></h3>
+
+                <a href="https://3pontoapp.com.br/" target="_blank" style="display:block;margin-bottom:1rem;">
+                    <div style="display: flex; justify-content: space-between">
+                        <img src="https://3pontoapp.com.br/wp-content/uploads/2022/11/app-1.png"
+                            alt="Business and Personal Finances Consulting 1"
+                            style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s; max-width: 220px;"
+                            onmouseover="this.style.transform='scale(1.03)'"
+                            onmouseout="this.style.transform='scale(1)'" />
+                        <img src="https://3pontoapp.com.br/wp-content/uploads/2021/10/Group-206note_funcionalidades_3Ponto.png"
+                            alt="Business and Personal Finances Consulting 1"
+                            style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s; max-width: 320px;"
+                            onmouseover="this.style.transform='scale(1.03)'"
+                            onmouseout="this.style.transform='scale(1)'" />
+                        <img src="https://3pontoapp.com.br/wp-content/uploads/2021/10/FREE-Phone-XI-1celular_3Ponto.png"
+                            alt="Business and Personal Finances Consulting 1"
+                            style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s; max-width: 220px;"
+                            onmouseover="this.style.transform='scale(1.03)'"
+                            onmouseout="this.style.transform='scale(1)'" />
+                    </div>
+                </a>
+                <p>
+                    Played a key role in the complete lifecycle of a mobile app and web dashboard, from continuous
+                    maintenance (bug fixing, performance tuning) to the implementation of new features, contributing to
+                    high availability and a seamless user experience.
+                </p>
+                <p><strong>Technologies Used:</strong> React, React-native, PostgreSQL</p>
+
+            </div>
+            <div class="project">
+                <h3>Help Desk Business Analysis <small>(2019)</small></h3>
+
+                <a href="https://www.upwork.com/freelancers/~013067cc3fe031f3d4?p=1295505458819624960" target="_blank"
+                    style="display:block;margin-bottom:1rem;">
+                    <img src="https://www.upwork.com/att/download/portfolio/persons/uid/656428435143716864/profile/projects/files/1295504316302348288"
+                        alt="Business and Personal Finances Consulting 1"
+                        style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+                </a>
+                <p>
+                    Developed a dashboard with a full and detail overview of a help desk department team. ETL using
+                    python and
+                    business analyses with microsoft powerbi software.
+                </p>
+                <p><strong>Technologies Used:</strong> PowerBI, Python, MySQL</p>
+
+            </div>
+            <div class="project">
+                <h3>Business and Personal Finances Consulting <small>(2018)</small></h3>
+
+                <a href="https://www.upwork.com/freelancers/~013067cc3fe031f3d4?p=1295492712858251264" target="_blank"
+                    style="display:block;margin-bottom:1rem;">
+                    <img src="https://www.upwork.com/att/download/portfolio/persons/uid/656428435143716864/profile/projects/files/1295488792099045376"
+                        alt="Business and Personal Finances Consulting 1"
+                        style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+                    <img src="https://www.upwork.com/att/download/portfolio/persons/uid/656428435143716864/profile/projects/files/1295492495473188864"
+                        alt="Business and Personal Finances Consulting 2"
+                        style="width:100%;border-radius:5px;box-shadow:0 2px 8px rgba(0,0,0,0.07);transition:transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" />
+                </a>
+                <p>
+                    Created a business workflow for mid size brazilian company and also developed the company ERP, using
+                    Odoo (OpenERP) as core.
+                </p>
+                <p><strong>Technologies Used:</strong> PostgreSQL, Python, Javascript, JQuery</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+                <div class="form-success" id="formSuccess" style="display:none;">Thank you! I'll get back to you soon.
+                </div>
+            </form>
+            <p style="margin-top:2rem;">
+                <a href="mailto:and2carvalho@gmail.com">and2carvalho@gmail.com</a>
+            </p>
+            <p>
+                <a href="https://linkedin.com/in/and2carvalho" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/and2carvalho" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 and2carvalho</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+
+        themeToggle.onclick = () => {
+            const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        };
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.onclick = () => {
+            navLinks.classList.toggle('open');
+        };
+        // Close nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.onclick = () => navLinks.classList.remove('open');
+        });
+
+        // Highlight nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 80;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Fade-in animation on scroll
+        const revealSections = () => {
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    section.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealSections);
+        window.addEventListener('DOMContentLoaded', revealSections);
+
+        // Contact form (demo, no backend)
+        document.getElementById('contactForm').onsubmit = function (e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').style.display = 'block';
+            this.reset();
+        };
+
+        // Carousel logic
+        document.querySelectorAll('.carousel').forEach(function (carousel) {
+            // Adicione as URLs das imagens do carrossel aqui:
+            const images = [
+                "https://epicomsupport.zendesk.com/hc/article_attachments/27205595176596",
+                "https://epicomsupport.zendesk.com/hc/article_attachments/6237594805780",
+                "https://epicomsupport.zendesk.com/hc/article_attachments/25039633437076",
+                "https://epicomsupport.zendesk.com/hc/article_attachments/25039668613652",
+            ];
+            let current = 0;
+            const img = carousel.querySelector('.carousel-img');
+            const dotsContainer = carousel.querySelector('.carousel-dots');
+
+            function updateCarousel() {
+                img.src = images[current];
+                // Atualiza os dots
+                dotsContainer.innerHTML = images.map((_, i) =>
+                    `<span style="display:inline-block;width:10px;height:10px;margin:0 3px;border-radius:50%;background:${i === current ? 'var(--primary)' : '#bbb'};cursor:pointer;" data-idx="${i}"></span>`
+                ).join('');
+            }
+
+            carousel.querySelector('.prev').onclick = function (e) {
+                e.preventDefault();
+                current = (current - 1 + images.length) % images.length;
+                updateCarousel();
+            };
+            carousel.querySelector('.next').onclick = function (e) {
+                e.preventDefault();
+                current = (current + 1) % images.length;
+                updateCarousel();
+            };
+            dotsContainer.onclick = function (e) {
+                if (e.target.dataset.idx) {
+                    current = parseInt(e.target.dataset.idx);
+                    updateCarousel();
+                }
+            };
+            updateCarousel();
+        });
+
+    </script>
+</body>
+
+</html>
