@@ -1,0 +1,23 @@
+{
+  "name": "and2carvalho-github-io",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "cv:html": "mkdir -p cv-src/out && pandoc -f markdown+fenced_divs+bracketed_spans cv-src/andre-carvalho-pt.md -o cv-src/out/andre-carvalho-desenvolvedor.html --standalone --embed-resources --resource-path=cv-src --css cv.css && pandoc -f markdown+fenced_divs+bracketed_spans cv-src/andre-carvalho-en.md -o cv-src/out/andre-carvalho-developer.html --standalone --embed-resources --resource-path=cv-src --css cv.css",
+    "cv:pdf": "npm run cv:html && node scripts/render-cv.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "puppeteer-core": "^24.43.0",
+    "typescript": "^5.8.3"
+  }
+}

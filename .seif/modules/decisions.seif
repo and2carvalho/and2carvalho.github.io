@@ -1,0 +1,11 @@
+SEIF_MODULE_DRAFT
+
+classification: PUBLIC
+module: decisions
+scope: and2carvalho.github.io
+
+Decisions:
+- Next.js is used with static export (`output: "export"`) to keep GitHub Pages runtime fully static.
+- Deployment is via GitHub Actions uploading `out/` to GitHub Pages.
+- Repo uses `AGENTS.md` as the canonical session contract.
+

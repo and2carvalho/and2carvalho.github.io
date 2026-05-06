@@ -1,0 +1,11 @@
+SEIF_MODULE_DRAFT
+
+classification: PUBLIC
+module: feedback
+scope: and2carvalho.github.io
+
+Feedback (operator preferences observed):
+- Target deploy: GitHub Pages as User Page root (`and2carvalho.github.io`).
+- Site architecture preference: migrate to Next.js (static export).
+- SEIF role here is provenance + auditable governance for AI-assisted artifacts and session discipline.
+
