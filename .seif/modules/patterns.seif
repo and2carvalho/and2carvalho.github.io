@@ -1,0 +1,12 @@
+SEIF_MODULE_DRAFT
+
+classification: PUBLIC
+module: patterns
+scope: and2carvalho.github.io
+
+Patterns:
+- Page structure lives in `src/app/` (App Router).
+- UI sections are components under `src/components/`.
+- Content is centralized under `src/content/` to avoid hardcoding copy inside JSX.
+- Global styling lives in `src/app/globals.css`.
+
