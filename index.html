@@ -5,48 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andre C.A. de Carvalho - Software Engineer</title>
-    <meta name="description" content="Software Engineer focused on backend architecture, systems integration, and protocol design. Creator of S.E.I.F.">
+    <meta name="description" content="Software Engineer with 5+ years shipping products. Full-stack, backend systems, marketplace integrations, and AI artifact provenance tooling.">
     <style>
         :root {
-            --primary: #c0785a;
-            --primary-hover: #a8654a;
-            --bg: #faf9f7;
-            --text: #2d2d2d;
-            --muted: #6b6b6b;
-            --card: #fff;
-            --dark: #1a1a2e;
-            --dark-text: #e8e8e8;
-            --border: #e5e2dd;
-            --tag-bg: #f0ece6;
-            --tag-text: #5a5a5a;
+            --primary: #4a7c6f;
+            --primary-hover: #3d6a5e;
+            --accent: #c0785a;
+            --bg: #fafaf8;
+            --text: #2a2a2a;
+            --muted: #5f6368;
+            --card: #ffffff;
+            --dark: #1b1f23;
+            --dark-surface: #242830;
+            --dark-text: #b0b8c1;
+            --border: #e2e2e0;
+            --tag-bg: #eef3f0;
+            --tag-text: #3d6a5e;
+            --section-alt: #f4f4f2;
         }
 
         [data-theme="dark"] {
-            --primary: #d4896b;
-            --primary-hover: #c0785a;
-            --bg: #141419;
-            --text: #e0ddd8;
-            --muted: #8a8a8a;
-            --card: #1e1e26;
-            --dark: #0f0f17;
-            --dark-text: #d4896b;
-            --border: #2a2a35;
-            --tag-bg: #25252f;
-            --tag-text: #a0a0a0;
+            --primary: #6ba394;
+            --primary-hover: #5a9384;
+            --accent: #d4896b;
+            --bg: #13161a;
+            --text: #d8dce0;
+            --muted: #8b929a;
+            --card: #1c2027;
+            --dark: #0d0f12;
+            --dark-surface: #1c2027;
+            --dark-text: #8b929a;
+            --border: #2a2e35;
+            --tag-bg: #1e2a25;
+            --tag-text: #6ba394;
+            --section-alt: #161a1e;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
             transition: background 0.3s, color 0.3s;
         }
 
-        .container { max-width: 720px; margin: auto; padding: 0 24px; }
+        .container { max-width: 820px; margin: auto; padding: 0 24px; }
 
         /* Nav */
         nav {
@@ -54,235 +60,383 @@
             top: 0;
             background: var(--dark);
             z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 720px;
+            max-width: 820px;
             margin: auto;
-            padding: 0.65rem 24px;
+            padding: 0.7rem 24px;
         }
 
         .nav-brand {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
-            color: var(--primary);
+            color: #fff;
+            letter-spacing: 0.5px;
         }
 
-        .nav-right { display: flex; align-items: center; gap: 1.6rem; }
+        .nav-right { display: flex; align-items: center; gap: 1.5rem; }
 
         .nav-right a {
-            color: var(--dark-text);
+            color: #b0b8c1;
             text-decoration: none;
-            font-size: 0.88rem;
-            opacity: 0.7;
-            transition: opacity 0.2s;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        .nav-right a:hover { opacity: 1; color: var(--primary); }
+        .nav-right a:hover { color: var(--primary); }
 
         .theme-toggle {
             background: none;
             border: none;
-            color: var(--dark-text);
+            color: #b0b8c1;
             font-size: 1rem;
             cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
 
-        .theme-toggle:hover { opacity: 1; }
+        .theme-toggle:hover { color: #fff; }
+
+        /* Hamburger */
+        .hamburger { display: none; cursor: pointer; }
+        .hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #b0b8c1;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.2s;
+        }
 
         /* Hero */
         .hero {
             background: var(--dark);
-            padding: 5rem 0 4.5rem;
-            text-align: center;
+            padding: 5rem 0 4rem;
         }
 
+        .hero-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .hero-text { flex: 1; }
+
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 700;
             color: #fff;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
-        [data-theme="dark"] .hero h1 { color: #e8e8e8; }
-
-        .hero .subtitle {
-            font-size: 1.08rem;
-            color: var(--dark-text);
-            font-weight: 300;
+        .hero .role {
+            font-size: 1.05rem;
+            color: var(--primary);
+            font-weight: 500;
             margin-top: 0.5rem;
-            opacity: 0.65;
-            letter-spacing: 0.3px;
+        }
+
+        .hero .summary {
+            font-size: 0.95rem;
+            color: #8b929a;
+            margin-top: 1rem;
+            line-height: 1.7;
+            max-width: 560px;
         }
 
         .hero-links {
-            margin-top: 2rem;
+            margin-top: 1.8rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .hero-links a {
-            color: var(--primary);
+            color: #fff;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            padding: 7px 18px;
-            border: 1px solid var(--primary);
-            border-radius: 4px;
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 5px;
             transition: all 0.2s;
         }
 
-        .hero-links a:hover { background: var(--primary); color: #fff; }
+        .hero-links a:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+        }
+
+        .hero-links a.primary-btn {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .hero-links a.primary-btn:hover {
+            background: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
 
         /* Sections */
         section {
-            padding: 3.5rem 0;
-            border-bottom: 1px solid var(--border);
+            padding: 4rem 0;
             opacity: 0;
-            transform: translateY(24px);
+            transform: translateY(20px);
             transition: opacity 0.5s, transform 0.5s;
         }
 
         section.visible { opacity: 1; transform: translateY(0); }
-        section:last-of-type { border-bottom: none; }
+
+        .section-alt { background: var(--section-alt); }
 
         h2 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
             letter-spacing: -0.3px;
         }
 
-        /* About */
-        #about p {
+        .section-subtitle {
             color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
         }
 
-        /* Project (SEIF) */
-        .project {
-            background: var(--card);
-            padding: 2rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            border-left: 3px solid var(--primary);
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
         }
 
-        .project h3 {
-            font-size: 1.15rem;
+        .skill-group h3 {
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 0.2rem;
-        }
-
-        .project .meta {
-            font-size: 0.83rem;
-            color: var(--muted);
-            margin-bottom: 1rem;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary);
             margin-bottom: 0.6rem;
         }
 
-        .tags {
+        .skill-group .tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 5px;
+        }
+
+        .skill-group .tags span {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Experience */
+        .exp-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exp-item:last-child { border-bottom: none; }
+
+        .exp-date {
+            min-width: 100px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-weight: 500;
+            padding-top: 2px;
+        }
+
+        .exp-body { flex: 1; }
+
+        .exp-body h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+        }
+
+        .exp-body .company {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .exp-body .desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            line-height: 1.7;
+        }
+
+        .exp-body .highlights {
+            list-style: none;
+            margin-top: 0.5rem;
+            padding: 0;
+        }
+
+        .exp-body .highlights li {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .exp-body .highlights li::before {
+            content: '\2022';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        .exp-body .tech {
+            margin-top: 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .exp-body .tech span {
+            font-size: 0.75rem;
+            color: var(--muted);
+            background: var(--tag-bg);
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+        }
+
+        .project {
+            background: var(--card);
+            padding: 1.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .project:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .project h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .project .badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+
+        .badge-oss { background: var(--tag-bg); color: var(--primary); }
+        .badge-pro { background: #fef3e6; color: #b87a3d; }
+        .badge-ecosystem { background: #e8eef8; color: #4a6b9c; }
+
+        [data-theme="dark"] .badge-pro { background: #2a2318; color: #d4996b; }
+        [data-theme="dark"] .badge-ecosystem { background: #1c2230; color: #7a9cc6; }
+
+        .project .project-desc {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            line-height: 1.7;
+        }
+
+        .project .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
             margin-top: 1rem;
         }
 
-        .tags span {
+        .project .tags span {
             background: var(--tag-bg);
             color: var(--tag-text);
-            padding: 3px 10px;
+            padding: 3px 9px;
             border-radius: 3px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
         }
 
         .project-links {
-            margin-top: 1.2rem;
+            margin-top: 1rem;
             display: flex;
             gap: 1.2rem;
-            flex-wrap: wrap;
         }
 
         .project-links a {
             color: var(--primary);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
 
         .project-links a:hover { text-decoration: underline; }
 
-        .project .stats {
-            font-size: 0.82rem;
+        /* Featured project */
+        .project-featured {
+            border-left: 3px solid var(--primary);
+        }
+
+        .project-stats {
+            font-size: 0.8rem;
             color: var(--muted);
+            margin-top: 0.8rem;
+        }
+
+        /* Ecosystem components */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.6rem;
             margin-top: 1rem;
         }
 
-        /* Background */
-        .timeline {
-            list-style: none;
-        }
-
-        .timeline li {
-            position: relative;
-            padding-left: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-left: 1px solid var(--border);
-        }
-
-        .timeline li:last-child {
-            padding-bottom: 0;
-            border-left: 1px solid transparent;
-        }
-
-        .timeline li::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 6px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--primary);
-        }
-
-        .timeline .role {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .timeline .where {
-            color: var(--muted);
-            font-size: 0.88rem;
-        }
-
-        .timeline .when {
-            color: var(--muted);
+        .eco-item {
+            background: var(--tag-bg);
+            padding: 0.6rem 0.8rem;
+            border-radius: 5px;
             font-size: 0.8rem;
-            opacity: 0.7;
         }
 
-        .timeline .desc {
+        .eco-item strong {
+            display: block;
+            font-size: 0.78rem;
+            color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+
+        .eco-item span {
             color: var(--muted);
-            font-size: 0.88rem;
-            margin-top: 0.3rem;
-            line-height: 1.6;
+            font-size: 0.73rem;
         }
 
         /* Contact */
@@ -290,14 +444,17 @@
 
         #contact p {
             color: var(--muted);
-            font-size: 1rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.8rem;
             flex-wrap: wrap;
         }
 
@@ -306,23 +463,42 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         .contact-links a:hover { color: var(--primary-hover); }
 
         footer {
             text-align: center;
-            padding: 1.2rem 0;
+            padding: 1.5rem 0;
             background: var(--dark);
-            color: var(--dark-text);
-            font-size: 0.8rem;
-            opacity: 0.5;
+            color: #5f6368;
+            font-size: 0.78rem;
             margin-top: 2rem;
         }
 
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero { padding: 3.5rem 0 3rem; }
+            .exp-item { flex-direction: column; gap: 0.3rem; }
+            .exp-date { min-width: auto; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .ecosystem-grid { grid-template-columns: 1fr 1fr; }
             .nav-right a.nav-hide { display: none; }
+            .hamburger { display: block; }
+            .nav-right.open {
+                position: absolute;
+                top: 48px;
+                right: 16px;
+                flex-direction: column;
+                background: var(--dark);
+                padding: 1rem;
+                border-radius: 8px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+                gap: 0.8rem;
+            }
+            .nav-right.open a { display: block; }
         }
     </style>
 </head>
@@ -330,119 +506,343 @@
 <body>
     <nav>
         <div class="nav-inner">
-            <div class="nav-brand">ACAC</div>
-            <div class="nav-right">
-                <a href="#about" class="nav-hide">About</a>
-                <a href="#work">Work</a>
-                <a href="#background" class="nav-hide">Background</a>
+            <div class="nav-brand">and2carvalho</div>
+            <div class="nav-right" id="navLinks">
+                <a href="#experience" class="nav-hide">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills" class="nav-hide">Skills</a>
                 <a href="#contact">Contact</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
     <div class="hero">
         <div class="container">
-            <h1>Andre Cunha Antero de Carvalho</h1>
-            <p class="subtitle">Software Engineer &mdash; Backend, Systems, Protocol Design</p>
-            <div class="hero-links">
-                <a href="https://github.com/and2carvalho" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/and2carvalho" target="_blank">LinkedIn</a>
-                <a href="https://pypi.org/project/seif-cli/" target="_blank">PyPI</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Andre C.A. de Carvalho</h1>
+                    <p class="role">Software Engineer</p>
+                    <p class="summary">
+                        5+ years shipping products &mdash; from fintech mobile apps and e-commerce platforms
+                        with marketplace integrations (PagarMe, PinPag, Mercado Livre) to building an
+                        open-source cryptographic provenance protocol for AI artifacts: 11 repositories,
+                        125+ PRs, and a CLI published on PyPI &mdash; all shipped in under 6 weeks.
+                        Currently at Hubsell in a team of 20+ engineers.
+                    </p>
+                    <div class="hero-links">
+                        <a href="#contact" class="primary-btn">Get in touch</a>
+                        <a href="https://github.com/and2carvalho" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/and2carvalho" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <section id="about">
+    <!-- Experience -->
+    <section id="experience">
         <div class="container">
-            <h2>About</h2>
-            <p>
-                Software engineer with 7+ years building backend systems, data pipelines, integrations,
-                and full-stack products. From freelance BI consulting to marketplace platforms at scale.
-            </p>
-            <p>
-                Currently focused on S.E.I.F. &mdash; a human-machine communication protocol grounded
-                in control theory and mathematical resonance. Open source, published on PyPI, validated
-                independently by 6 AI systems.
-            </p>
-        </div>
-    </section>
+            <h2>Experience</h2>
+            <p class="section-subtitle">Where I've worked and what I've built.</p>
 
-    <section id="work">
-        <div class="container">
-            <h2>Open Source</h2>
+            <div class="exp-item">
+                <div class="exp-date">2022 &ndash; Present</div>
+                <div class="exp-body">
+                    <h3>Software Engineer</h3>
+                    <div class="company">Hubsell &mdash; E-commerce Integration Platform</div>
+                    <ul class="highlights">
+                        <li>Frontend and integration development on SellerCenter, connecting sellers to Mercado Livre, Amazon, Shopee, and other marketplaces</li>
+                        <li>Built POS (Point of Sale) and Shopping Assistant features that directly improved seller conversion</li>
+                        <li>Integrated payment gateways (PagarMe, PinPag) into the seller dashboard</li>
+                        <li>Reduced loading times on heavy screens (dashboards, sales panels) using ElasticSearch + React Query</li>
+                        <li>Shipped a mobile app for Android and iOS using Expo</li>
+                    </ul>
+                    <div class="tech">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>ElasticSearch</span>
+                        <span>Zustand</span>
+                        <span>React Query</span>
+                        <span>Expo</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </div>
 
-            <div class="project">
-                <h3>S.E.I.F. &mdash; Spiral Encoding Interoperability Framework</h3>
-                <div class="meta">2024 &ndash; Present &middot; Python &middot; CC BY-NC-SA 4.0</div>
-                <p>
-                    The first human-machine communication protocol built on a mathematical primitive:
-                    the damping ratio of H(s) = 9/(s&sup2;+3s+6) yields &zeta; = &radic;6/4 &asymp; &phi;&macr;&sup1;
-                    within 0.916%. This is the unique primitive solution &mdash; all others are multiples
-                    of the family b=3k, c=6k&sup2;.
-                </p>
-                <p>
-                    Compresses project context by 93%, measures text quality with a Grade A&ndash;F system
-                    (stance detection + harmonic resonance), and enables hash-chained team collaboration
-                    across any LLM.
-                </p>
-                <div class="tags">
-                    <span>Python</span>
-                    <span>CLI</span>
-                    <span>Signal Processing</span>
-                    <span>Control Theory</span>
-                    <span>ngspice</span>
-                    <span>KiCad</span>
+            <div class="exp-item">
+                <div class="exp-date">2020 &ndash; 2022</div>
+                <div class="exp-body">
+                    <h3>Full-Stack Developer</h3>
+                    <div class="company">3 UP Tech &mdash; 3Ponto Financial App</div>
+                    <ul class="highlights">
+                        <li>Owned the full product lifecycle of a financial management platform: mobile app (React Native) + web dashboard (React)</li>
+                        <li>Backend development using microservices architecture</li>
+                        <li>Led frontend development, from feature implementation to bug resolution and performance tuning</li>
+                        <li>Facilitated migrations and integrations with legacy systems</li>
+                    </ul>
+                    <div class="tech">
+                        <span>React</span>
+                        <span>React Native</span>
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
+                        <span>Express</span>
+                        <span>Microservices</span>
+                    </div>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/and2carvalho/seif" target="_blank">Source Code</a>
-                    <a href="https://pypi.org/project/seif-cli/" target="_blank">PyPI</a>
-                    <a href="https://seif-framework.streamlit.app" target="_blank">Live Demo</a>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2018 &ndash; 2019</div>
+                <div class="exp-body">
+                    <h3>Freelance Consultant</h3>
+                    <div class="company">Upwork &mdash; Data &amp; Business Systems</div>
+                    <ul class="highlights">
+                        <li>Built ETL pipelines and Power BI dashboards for help desk analytics at mid-size companies</li>
+                        <li>Implemented a full ERP system (Odoo/OpenERP) with custom business workflows</li>
+                        <li>Automated data models with SQL and Python for executive dashboards</li>
+                    </ul>
+                    <div class="tech">
+                        <span>Python</span>
+                        <span>Power BI</span>
+                        <span>PostgreSQL</span>
+                        <span>MySQL</span>
+                        <span>Odoo</span>
+                    </div>
                 </div>
-                <div class="stats">52 modules &middot; 373 tests &middot; 25 test suites &middot; Verified by Claude, Grok, Kimi, Gemini, Z.AI, DeepSeek</div>
             </div>
         </div>
     </section>
 
-    <section id="background">
+    <!-- Projects -->
+    <section id="projects" class="section-alt">
         <div class="container">
-            <h2>Background</h2>
-            <ul class="timeline">
-                <li>
-                    <div class="role">Software Engineer</div>
-                    <div class="where">E-commerce &amp; Marketplace Integration</div>
-                    <div class="when">2022 &ndash; Present</div>
-                    <div class="desc">
-                        Frontend and integration development on a multi-channel seller platform.
-                        React, Next.js, Node.js, MongoDB. Team of 20+ engineers.
+            <h2>Projects</h2>
+            <p class="section-subtitle">Products and tools I've built.</p>
+
+            <div class="projects-grid">
+
+                <!-- SEIF Ecosystem -->
+                <div class="project project-featured">
+                    <div class="project-header">
+                        <h3>SEIF &mdash; Cryptographic Provenance for AI Artifacts</h3>
+                        <span class="badge badge-ecosystem">Ecosystem</span>
                     </div>
-                </li>
-                <li>
-                    <div class="role">Full-Stack Developer</div>
-                    <div class="where">Fintech &amp; Mobile Products</div>
-                    <div class="when">2019 &ndash; 2022</div>
-                    <div class="desc">
-                        Mobile app and web dashboard for a financial management platform.
-                        React, React Native, PostgreSQL. Full product lifecycle.
+                    <p class="project-desc">
+                        An open-source protocol that answers: <em>who produced this AI artifact, under which policy,
+                        with what hash chain, and when?</em> Uses Ed25519 signing, OpenTimestamps anchoring, and a
+                        classification gate (PUBLIC / INTERNAL / CONFIDENTIAL) built into the AI agent loop &mdash;
+                        not bolted on after. Designed to complement the Model Context Protocol (MCP):
+                        while MCP carries context between tools, SEIF attests to the provenance and integrity
+                        of artifacts created from that context.
+                    </p>
+
+                    <div class="ecosystem-grid">
+                        <div class="eco-item">
+                            <strong>seif-cli</strong>
+                            <span>CLI tool &middot; PyPI &middot; sign, verify, classify</span>
+                        </div>
+                        <div class="eco-item">
+                            <strong>seif-engine</strong>
+                            <span>Quality gate &middot; Multi-AI consensus</span>
+                        </div>
+                        <div class="eco-item">
+                            <strong>VS Code Extension</strong>
+                            <span>Modules, cycles, sessions panel</span>
+                        </div>
+                        <div class="eco-item">
+                            <strong>Browser Extension</strong>
+                            <span>Chrome/Edge &middot; Observability</span>
+                        </div>
+                        <div class="eco-item">
+                            <strong>Dashboard</strong>
+                            <span>Next.js &middot; Audit trail &middot; Sessions</span>
+                        </div>
+                        <div class="eco-item">
+                            <strong>Transparency Log</strong>
+                            <span>Append-only &middot; Rekor-shaped for AI</span>
+                        </div>
                     </div>
-                </li>
-                <li>
-                    <div class="role">Freelance Consultant</div>
-                    <div class="where">Data &amp; Business Systems</div>
-                    <div class="when">2018 &ndash; 2019</div>
-                    <div class="desc">
-                        ETL pipelines, Power BI dashboards, ERP implementation (Odoo).
-                        Python, PostgreSQL, MySQL.
+
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>TypeScript</span>
+                        <span>Ed25519</span>
+                        <span>OpenTimestamps</span>
+                        <span>Next.js</span>
+                        <span>Tauri</span>
+                        <span>Chrome MV3</span>
+                        <span>PostgreSQL</span>
                     </div>
-                </li>
-            </ul>
+                    <div class="project-stats">125+ PRs &middot; 78 modules &middot; 88 test suites &middot; 11 repositories &middot; Published on PyPI</div>
+                    <div class="project-links">
+                        <a href="https://github.com/and2carvalho/seif" target="_blank">Source Code</a>
+                        <a href="https://pypi.org/project/seif-cli/" target="_blank">PyPI</a>
+                        <a href="https://seif-framework.streamlit.app" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Other projects -->
+                <div class="project">
+                    <div class="project-header">
+                        <h3>Killer Design</h3>
+                        <span class="badge badge-oss">Open Source</span>
+                    </div>
+                    <p class="project-desc">
+                        Design system and component library with Storybook documentation, visual regression
+                        testing with Playwright, and unit testing with Vitest.
+                    </p>
+                    <div class="tags">
+                        <span>React 19</span>
+                        <span>TypeScript</span>
+                        <span>Storybook</span>
+                        <span>Vitest</span>
+                        <span>Playwright</span>
+                        <span>Vite</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/and2carvalho/killer-design" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <h3>Coro Echo</h3>
+                        <span class="badge badge-oss">Open Source</span>
+                    </div>
+                    <p class="project-desc">
+                        Full-stack monorepo with RESTful API, JWT authentication, Prisma ORM
+                        with PostgreSQL, and a React + Tailwind frontend.
+                    </p>
+                    <div class="tags">
+                        <span>React 19</span>
+                        <span>Express</span>
+                        <span>Prisma</span>
+                        <span>PostgreSQL</span>
+                        <span>JWT</span>
+                        <span>Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/and2carvalho/coro-echo" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <h3>NexLab Photo Code</h3>
+                        <span class="badge badge-pro">Deployed</span>
+                    </div>
+                    <p class="project-desc">
+                        Photo capture app with QR code generation for instant download.
+                        Imgur API integration. Live on Vercel.
+                    </p>
+                    <div class="tags">
+                        <span>Next.js 15</span>
+                        <span>Imgur API</span>
+                        <span>QR Code</span>
+                        <span>Jest</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nexlab-test.vercel.app" target="_blank">Live App</a>
+                        <a href="https://github.com/and2carvalho/nexlab-photo-code" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-header">
+                        <h3>Flutter Design System</h3>
+                        <span class="badge badge-oss">Reference</span>
+                    </div>
+                    <p class="project-desc">
+                        Material 3 design system for Flutter with custom theming, color tokens,
+                        gradient components, async overlays, and infinite list patterns.
+                    </p>
+                    <div class="tags">
+                        <span>Flutter</span>
+                        <span>Dart</span>
+                        <span>Material 3</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/and2carvalho/system_design" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <p class="section-subtitle">Technologies I work with.</p>
+
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Frontend</h3>
+                    <div class="tags">
+                        <span>React</span>
+                        <span>Next.js</span>
+                        <span>React Native</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind</span>
+                        <span>Styled-Components</span>
+                        <span>Zustand</span>
+                        <span>Redux</span>
+                        <span>Storybook</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Backend</h3>
+                    <div class="tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>NestJS</span>
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>Redis</span>
+                        <span>Prisma</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Infra & Testing</h3>
+                    <div class="tags">
+                        <span>Docker</span>
+                        <span>Git</span>
+                        <span>Firebase</span>
+                        <span>Vercel</span>
+                        <span>ElasticSearch</span>
+                        <span>Jest</span>
+                        <span>Vitest</span>
+                        <span>Playwright</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Mobile & Other</h3>
+                    <div class="tags">
+                        <span>Expo</span>
+                        <span>Flutter</span>
+                        <span>Tauri</span>
+                        <span>Power BI</span>
+                        <span>Swagger</span>
+                        <span>Microservices</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
         <div class="container">
             <h2>Contact</h2>
-            <p>Collaboration, consulting, or S.E.I.F.</p>
+            <p>Open to opportunities, collaboration, or conversations about engineering and AI tooling.</p>
             <div class="contact-links">
                 <a href="mailto:and2carvalho@gmail.com">and2carvalho@gmail.com</a>
                 <a href="https://linkedin.com/in/and2carvalho" target="_blank">LinkedIn</a>
@@ -468,7 +868,13 @@
             tog.innerHTML = t === 'dark' ? '&#9788;' : '&#9790;';
         };
 
-        // Reveal
+        // Hamburger
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.onclick = () => navLinks.classList.toggle('open');
+        navLinks.querySelectorAll('a').forEach(a => a.onclick = () => navLinks.classList.remove('open'));
+
+        // Reveal on scroll
         const sections = document.querySelectorAll('section');
         const reveal = () => sections.forEach(s => {
             if (s.getBoundingClientRect().top < innerHeight - 60) s.classList.add('visible');
@@ -481,7 +887,9 @@
         addEventListener('scroll', () => {
             let cur = '';
             sections.forEach(s => { if (scrollY >= s.offsetTop - 100) cur = s.id; });
-            navA.forEach(a => a.style.opacity = a.getAttribute('href') === '#' + cur ? '1' : '');
+            navA.forEach(a => {
+                a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--primary)' : '';
+            });
         });
     </script>
 </body>
