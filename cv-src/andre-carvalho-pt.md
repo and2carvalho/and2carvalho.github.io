@@ -192,4 +192,8 @@ Upwork — Data & Business Systems
 
 ## Formação
 
-- Pós-graduação em Business Intelligence
+- Graduação em Administração — União de Faculdades Metropolitanas de Maringá, 2016
+
+## Publicações
+
+- CARVALHO, A. C. A. de. **On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification**. Zenodo, 2026. DOI: [10.5281/zenodo.19344678](https://doi.org/10.5281/zenodo.19344678).

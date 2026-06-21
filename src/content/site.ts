@@ -37,6 +37,21 @@ export type AtAGlanceItem = {
   detail: string;
 };
 
+export type Publication = {
+  authors: string;
+  year: string;
+  title: string;
+  venue: string;
+  doi?: string;
+  url?: string;
+};
+
+export type EducationItem = {
+  degree: string;
+  institution: string;
+  period: string;
+};
+
 export const site = {
   brand: "and2carvalho",
   name: "Andre C.A. de Carvalho",
@@ -64,6 +79,7 @@ export const site = {
   atAGlance: [
     { title: "AI / LLM", detail: "integração LangChain, RAG híbrido, prompt engineering e MCP" },
     { title: "Governança de AI", detail: "proveniência Ed25519, classificação e transparency log (SEIF)" },
+    { title: "Pesquisa", detail: "proveniência de IA, governança auditável e estabilidade no treinamento de LLMs" },
     { title: "Backend", detail: "Go e Python — gRPC, NATS, microservices, APIs e filas" },
     { title: "Frontend & Mobile", detail: "React/Next.js e Flutter com foco em UX, performance e design systems" },
     { title: "Dados & Qualidade", detail: "ETL/SQL, ElasticSearch, testes (unit/e2e), CI e observabilidade" },
@@ -163,6 +179,26 @@ export const projects: Project[] = [
       "Callback handler de LangChain zero-modificação que adiciona governança sobre qualquer chain: classificação, quality-gate (GROUNDED/DRIFT), assinatura de proveniência Ed25519 e trilha em transparency log. Modos local (offline) e hosted multi-tenant (HTTP, chaves sk_seif_). Design fail-soft: a governança nunca derruba a chain.",
     tags: ["Python", "LangChain", "RAG", "MCP", "Ed25519", "Multi-tenant"],
     links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
+  },
+];
+
+export const publications: Publication[] = [
+  {
+    authors: "CARVALHO, A. C. A. de",
+    year: "2026",
+    title:
+      "On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification",
+    venue: "Zenodo",
+    doi: "10.5281/zenodo.19344678",
+    url: "https://doi.org/10.5281/zenodo.19344678",
+  },
+];
+
+export const education: EducationItem[] = [
+  {
+    degree: "Graduação em Administração",
+    institution: "União de Faculdades Metropolitanas de Maringá",
+    period: "2016",
   },
 ];
 

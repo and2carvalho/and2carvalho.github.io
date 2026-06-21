@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "cv:html": "mkdir -p cv-src/out && pandoc -f markdown+fenced_divs+bracketed_spans cv-src/andre-carvalho-pt.md -o cv-src/out/andre-carvalho-desenvolvedor.html --standalone --embed-resources --resource-path=cv-src --css cv.css && pandoc -f markdown+fenced_divs+bracketed_spans cv-src/andre-carvalho-en.md -o cv-src/out/andre-carvalho-developer.html --standalone --embed-resources --resource-path=cv-src --css cv.css",
-    "cv:pdf": "npm run cv:html && node scripts/render-cv.mjs"
+    "cv:pdf": "npm run cv:html && mkdir -p public/cv && weasyprint cv-src/out/andre-carvalho-desenvolvedor.html public/cv/andre-carvalho-desenvolvedor.pdf && weasyprint cv-src/out/andre-carvalho-developer.html public/cv/andre-carvalho-developer.pdf"
   },
   "dependencies": {
     "next": "^15.5.0",
@@ -17,7 +17,6 @@
     "@types/node": "^24.0.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
-    "puppeteer-core": "^24.43.0",
     "typescript": "^5.8.3"
   }
 }
