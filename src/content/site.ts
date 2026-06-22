@@ -96,7 +96,7 @@ export const experiences: Experience[] = [
   {
     date: "2025 – Present",
     role: "Full-Stack Engineer",
-    company: "Beezoo Labs — Multi-tenant SaaS for loyalty & digital commerce",
+    company: "Beezoo Labs — Multi-tenant SaaS for loyalty & digital commerce (malls & retail)",
     highlights: [
       "Built the Showcase microservice end-to-end (.proto → Go service → admin panel → public app): digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events",
       "Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant",
