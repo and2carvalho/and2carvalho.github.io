@@ -8,6 +8,8 @@ type NavItem = { label: string; href: string; hideOnMobile?: boolean };
 const navItems: NavItem[] = [
   { label: "Experience", href: "#experience", hideOnMobile: true },
   { label: "Projects", href: "#projects" },
+  { label: "Publications", href: "#publications", hideOnMobile: true },
+  { label: "Education", href: "#education", hideOnMobile: true },
   { label: "Skills", href: "#skills", hideOnMobile: true },
   { label: "Contact", href: "#contact" },
 ];

@@ -7,7 +7,7 @@ lang: en
 
 ::: {.subhead}
 ::: {.subhead-title}
-Senior Full-Stack Engineer · Integrations ·
+AI-Augmented Full-Stack Developer
 :::
 
 ::: {.subhead-links}
@@ -17,18 +17,74 @@ Email: [and2carvalho@gmail.com](mailto:and2carvalho@gmail.com) • [linkedin.com
 :::
 
 ::: {.summary}
-Senior Full-Stack Engineer with 7+ years shipping web and mobile products, focused on integrations (marketplaces/payments), performance, and maintainable architecture. Strong background in data/BI (ETL, SQL, Python automation) and system integrity — directly connected to my open-source work on SEIF (cryptographic provenance and auditable governance for AI-generated artifacts in AI-assisted workflows).
+Full-Stack Engineer with 7+ years shipping web and mobile products, now focused on building and governing LLM systems in production — LangChain integration, hybrid RAG, prompt engineering, and cryptographic provenance for AI-generated artifacts (author of the SEIF protocol — seifprotocol.com). All on a solid product foundation: marketplace/payment integrations, performance, and maintainable architecture, with a strong data/BI background (ETL, SQL, Python).
 :::
 
 ::: {.chips}
+- **AI / LLM**: LangChain · hybrid RAG · prompt engineering · MCP · Ollama
+- **AI governance (SEIF)**: Ed25519 provenance · auditable governance · transparency log
 - **Marketplaces**: Mercado Livre · Amazon · Shopee
 - **Payments**: PagarMe · PinPag
-- **Mobile**: Flutter · iOS + Android (stores)
-- **Performance**: ElasticSearch · React Query
-- **Open source**: SEIF (provenance/audit)
+- **Microservices**: Go · gRPC · NATS · Kubernetes
+:::
+
+## Highlight (AI)
+
+::: {.role}
+::: {.rolehead}
+::: {}
+::: {.role-title}
+SEIF — Cryptographic provenance & governance for AI
+:::
+
+::: {.role-company}
+Author · AI provenance & governance protocol · seifprotocol.com
+:::
+:::
+
+::: {.role-period}
+2026 – Present
+:::
+:::
+
+- Designed a protocol for **cryptographic provenance + auditable governance** (sessions, cycles, classification) over AI-generated artifacts — Ed25519 signing with optional time-anchoring (OpenTimestamps).
+- Built **`langchain-seif`** (Python package): a zero-modification **LangChain callback handler** that adds a governance plane — classification, quality-gating, provenance signing, and a transparency-log trail — over any chain, in local or hosted multi-tenant mode.
+- Implemented **hybrid RAG** over the knowledge store (lexical + Ollama embeddings) with a cost-aware retrieval trigger; context compression from 50k+ raw tokens to ~3–5k.
+- Authored the grounding / system-prompt layer and ran **empirical prompt-engineering experiments** (A/B across multiple models) on whether framing changes correctness — measured, not assumed.
+
+::: {.tech}
+`Python` `TypeScript` `LangChain` `RAG` `Ollama` `Ed25519` `OpenTimestamps` `MCP` `Next.js` `PostgreSQL`
+:::
 :::
 
 ## Experience
+
+::: {.role}
+::: {.rolehead}
+::: {}
+::: {.role-title}
+Full-Stack Engineer
+:::
+
+::: {.role-company}
+Beezoo Labs — Multi-tenant SaaS platform for loyalty and digital commerce (malls & retail)
+:::
+:::
+
+::: {.role-period}
+Jan 2025 – Present
+:::
+:::
+
+- Built from scratch the Showcase microservice (digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events) plus its mobile-first frontend — end-to-end feature: .proto → Go service → admin panel → public app.
+- Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant.
+- Developed white-label Flutter apps for consumers and partners — loyalty, campaigns, Eventim integration, biometric login, AI batch for catalog, and unified design system.
+- Solo-built an OCR service for Brazilian tax receipts (NF-e/NFC-e) in Python/gRPC with a hybrid cascade (QR → Tesseract → PaddleOCR → Vision LLM), raising accuracy from 28% to 75% on a 1,138 real-image dataset; deployed on Docker + Kubernetes.
+
+::: {.tech}
+`Go` `TypeScript` `Dart` `Python` `gRPC` `Protobuf` `NATS` `PostgreSQL` `Next.js 15` `React 19` `Flutter` `Docker` `Kubernetes` `Tilt`
+:::
+:::
 
 ::: {.role}
 ::: {.rolehead}
@@ -43,7 +99,7 @@ Hubsell — E-commerce Integration Platform
 :::
 
 ::: {.role-period}
-2022 – Present
+May 2022 – Dec 2024
 :::
 :::
 
@@ -55,9 +111,6 @@ Hubsell — E-commerce Integration Platform
 ::: {.tech}
 `React` `Next.js` `Node.js` `MongoDB` `ElasticSearch` `Zustand` `React Query` `Expo`
 :::
-:::
-
-::: {.pagebreak}
 :::
 
 ::: {.role}
@@ -116,16 +169,20 @@ Upwork — Data & Business Systems
 
 ::: {.two-col}
 ::: {.box}
+**AI / LLM**<br />
+<span class="muted">LLM integration (LangChain) · Hybrid RAG · Prompt engineering · MCP · Ollama · LLM-as-judge / quality gating · Ed25519 provenance</span>
+:::
+::: {.box}
 **Frontend**<br />
 <span class="muted">React · Next.js · TypeScript · State (Zustand/Redux) · Storybook</span>
 :::
 ::: {.box}
 **Backend**<br />
-<span class="muted">Node.js · Express/NestJS · Python/Django · REST APIs · Microservices</span>
+<span class="muted">Go · Node.js · Python · gRPC · REST APIs · NATS · Microservices</span>
 :::
 ::: {.box}
 **Data & Infra**<br />
-<span class="muted">PostgreSQL · MongoDB · Redis · Docker · ElasticSearch · ETL/SQL</span>
+<span class="muted">PostgreSQL · MongoDB · Redis · Docker · Kubernetes · ElasticSearch · ETL/SQL</span>
 :::
 ::: {.box}
 **Quality**<br />
@@ -135,5 +192,8 @@ Upwork — Data & Business Systems
 
 ## Education
 
-- B.A. in Business Administration
-- Postgraduate studies in Business Intelligence (not completed)
+- B.B.A. in Business Administration — União de Faculdades Metropolitanas de Maringá, 2016
+
+## Publications
+
+- CARVALHO, A. C. A. de. **On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification**. Zenodo, 2026. DOI: [10.5281/zenodo.19344678](https://doi.org/10.5281/zenodo.19344678).

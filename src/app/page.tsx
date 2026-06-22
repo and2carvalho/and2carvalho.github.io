@@ -1,6 +1,6 @@
 import { NavClient } from "@/components/NavClient";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { experiences, projects, site, skillGroups } from "@/content/site";
+import { education, experiences, projects, publications, site, skillGroups } from "@/content/site";
 
 function badgeClass(badge: string) {
   if (badge === "Ecosystem") return "badge badge-ecosystem";
@@ -169,6 +169,54 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="publications" data-reveal>
+        <div className="container">
+          <h2>Publicações</h2>
+          <p className="section-subtitle">Produção científica e técnica.</p>
+
+          <ul className="pub-list">
+            {publications.map((p) => (
+              <li key={p.title} className="pub-item">
+                <div className="pub-meta">
+                  {p.authors} ({p.year}).
+                </div>
+                <div className="pub-title">
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noreferrer">
+                      {p.title}
+                    </a>
+                  ) : (
+                    p.title
+                  )}
+                </div>
+                <div className="pub-venue">
+                  {p.venue}
+                  {p.doi ? ` · DOI: ${p.doi}` : ""}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section id="education" data-reveal>
+        <div className="container">
+          <h2>Formação</h2>
+          <p className="section-subtitle">Formação acadêmica.</p>
+
+          <ul className="edu-list">
+            {education.map((e) => (
+              <li key={`${e.degree}-${e.institution}`} className="edu-item">
+                <div className="edu-degree">{e.degree}</div>
+                <div className="edu-meta">
+                  {e.institution} · {e.period}
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -37,54 +37,76 @@ export type AtAGlanceItem = {
   detail: string;
 };
 
+export type Publication = {
+  authors: string;
+  year: string;
+  title: string;
+  venue: string;
+  doi?: string;
+  url?: string;
+};
+
+export type EducationItem = {
+  degree: string;
+  institution: string;
+  period: string;
+};
+
 export const site = {
   brand: "and2carvalho",
   name: "Andre C.A. de Carvalho",
-  role: "Engenheiro Full-Stack Sênior",
-  valueProp: "Integrações de marketplaces e pagamentos, performance e AI-assisted engineering com governança auditável.",
+  role: "Desenvolvedor Full-Stack Sênior · foco em AI / LLM",
+  valueProp: "Integração de LLMs em produção (LangChain, RAG híbrido, prompt engineering) e governança/proveniência auditável de artefatos de IA — sobre uma base sólida de produto: integrações, performance e arquitetura sustentável.",
   summary:
-    "Mais de 7 anos entregando produtos — de e-commerce e plataformas de gestão com integrações (PagarMe, PinPag, Mercado Livre) a um protocolo open-source de proveniência criptográfica para artefatos gerados por IA (SEIF). Atualmente na Hubsell em um time com 20+ engenheiros.",
+    "Mais de 7 anos entregando produtos web e mobile, agora focado em construir e governar sistemas de LLM em produção (LangChain, RAG híbrido, prompt engineering) e em proveniência criptográfica para artefatos de IA — autor do protocolo SEIF (seifprotocol.com). Atualmente na Beezoo Labs, construindo microservices Go (gRPC/NATS) e apps Flutter white-label.",
   links: {
     github: "https://github.com/and2carvalho",
     linkedin: "https://linkedin.com/in/and2carvalho",
     email: "and2carvalho@gmail.com",
-    seifSource: "https://github.com/and2carvalho/seif",
-    seifDemo: "https://seif-framework.streamlit.app",
-    seifPypi: "https://pypi.org/project/seif-cli/",
+    seifSite: "https://www.seifprotocol.com",
     cvPt: "/cv/andre-carvalho-desenvolvedor.pdf",
     cvEn: "/cv/andre-carvalho-developer.pdf",
   },
   metrics: [
     { label: "Experiência", value: "7+ anos" },
-    { label: "Escala", value: "Time 20+ engenheiros" },
+    { label: "Projeto autoral", value: "Protocolo SEIF" },
   ] satisfies Metric[],
   proofPills: [
+    { label: "AI / LLM", detail: "LangChain · RAG · prompt engineering · MCP" },
+    { label: "Proveniência", detail: "Ed25519 · governança auditável · transparency log" },
     { label: "Marketplaces", detail: "Mercado Livre · Amazon · Shopee" },
-    { label: "Payments", detail: "PagarMe · PinPag" },
-    { label: "Mobile", detail: "Flutter · iOS + Android (stores)" },
   ] satisfies ProofPill[],
   atAGlance: [
-    { title: "Integrações", detail: "marketplaces, ERPs, pagamentos e automação de catálogo/pedidos" },
-    { title: "Frontend", detail: "React/Next.js com foco em UX, performance e design systems" },
-    { title: "Backend", detail: "Node.js e Python, APIs, microservices, bancos e filas" },
-    { title: "Dados e busca", detail: "ElasticSearch, painéis pesados e otimizações de carregamento" },
-    { title: "Qualidade", detail: "testes (unit/e2e), CI, observabilidade e manutenção" },
+    { title: "AI / LLM", detail: "integração LangChain, RAG híbrido, prompt engineering e MCP" },
+    { title: "Governança de AI", detail: "proveniência Ed25519, classificação e transparency log (SEIF)" },
+    { title: "Pesquisa", detail: "proveniência de IA, governança auditável e estabilidade no treinamento de LLMs" },
+    { title: "Backend", detail: "Go e Python — gRPC, NATS, microservices, APIs e filas" },
+    { title: "Frontend & Mobile", detail: "React/Next.js e Flutter com foco em UX, performance e design systems" },
+    { title: "Dados & Qualidade", detail: "ETL/SQL, ElasticSearch, testes (unit/e2e), CI e observabilidade" },
   ] satisfies AtAGlanceItem[],
   seifHighlight: {
-    title: "Open-source highlight: SEIF",
+    title: "Destaque: SEIF — protocolo de governança de AI (autoral)",
     description:
-      "Proveniência criptográfica para artefatos de IA: assinatura Ed25519, ancoragem temporal opcional (OpenTimestamps) e governança auditável (sessões, ciclos, classificação). Desenvolvido e iterado em um fluxo AI-assisted (LLMs/Cursor) com rastreabilidade e integridade verificável. Complementar ao MCP: MCP transporta contexto; SEIF atesta integridade e autoria.",
-    links: [
-      { label: "Repo", href: "https://github.com/and2carvalho/seif" },
-      { label: "PyPI", href: "https://pypi.org/project/seif-cli/" },
-      { label: "Demo", href: "https://seif-framework.streamlit.app" },
-    ],
+      "Proveniência criptográfica e governança auditável para artefatos de IA: assinatura Ed25519, ancoragem temporal opcional (OpenTimestamps), classificação e transparency log. Inclui langchain-seif — um callback handler de LangChain zero-modificação que adiciona governança (classificação, quality-gate, assinatura e trilha de auditoria) sobre qualquer chain, e RAG híbrido (lexical + embeddings Ollama) sobre o store de conhecimento. Complementar ao MCP: MCP transporta contexto; SEIF atesta integridade e autoria.",
+    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
   },
 };
 
 export const experiences: Experience[] = [
   {
-    date: "2022 – Present",
+    date: "2025 – Present",
+    role: "Full-Stack Engineer",
+    company: "Beezoo Labs — Multi-tenant SaaS for loyalty & digital commerce",
+    highlights: [
+      "Built the Showcase microservice end-to-end (.proto → Go service → admin panel → public app): digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events",
+      "Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant",
+      "Built white-label Flutter apps (loyalty, campaigns, Eventim integration, biometric login, AI batch for catalog) on a unified design system",
+      "Solo-built an OCR service for tax receipts (NF-e/NFC-e) in Python/gRPC with a hybrid cascade (QR → Tesseract → PaddleOCR → Vision LLM), raising accuracy from 28% to 75% on a 1,138 real-image dataset",
+    ],
+    tech: ["Go", "TypeScript", "Dart", "Python", "gRPC", "NATS", "PostgreSQL", "Flutter", "Next.js 15", "React 19", "Docker", "Kubernetes"],
+  },
+  {
+    date: "2022 – 2024",
     role: "Software Engineer",
     company: "Hubsell — E-commerce Integration Platform",
     highlights: [
@@ -137,55 +159,61 @@ export const projects: Project[] = [
     badge: "Ecosystem",
     featured: true,
     description:
-      "Proveniência criptográfica para artefatos de IA com governança auditável (sessões, ciclos, classificação) e integridade verificável.",
+      "Proveniência criptográfica e governança auditável (sessões, ciclos, classificação) para artefatos de IA, com integração nativa a LangChain e RAG híbrido sobre o store de conhecimento.",
     ecosystemItems: [
-      { title: "seif-cli", subtitle: "CLI tool · PyPI · sign, verify, classify" },
-      { title: "seif-engine", subtitle: "Quality gate · Multi-AI consensus" },
+      { title: "langchain-seif", subtitle: "Governance plane for LangChain (callback handler)" },
+      { title: "seif-cli", subtitle: "CLI · sign, verify, classify" },
+      { title: "seif-engine", subtitle: "Quality gate · RAG · multi-tenant API" },
       { title: "VS Code Extension", subtitle: "Modules, cycles, sessions panel" },
-      { title: "Browser Extension", subtitle: "Chrome/Edge · Observability" },
       { title: "Dashboard", subtitle: "Next.js · Audit trail · Sessions" },
       { title: "Transparency Log", subtitle: "Append-only · Rekor-shaped for AI" },
     ],
-    tags: ["Python", "TypeScript", "Ed25519", "OpenTimestamps", "Next.js", "Tauri", "Chrome MV3", "PostgreSQL"],
-    stats: "125+ PRs · 78 modules · 88 test suites · 11 repositories · Published on PyPI",
-    links: [
-      { label: "Source Code", href: "https://github.com/and2carvalho/seif" },
-      { label: "PyPI", href: "https://pypi.org/project/seif-cli/" },
-      { label: "Live Demo", href: "https://seif-framework.streamlit.app" },
-    ],
+    tags: ["Python", "TypeScript", "LangChain", "RAG", "Ollama", "MCP", "Ed25519", "OpenTimestamps", "Next.js", "PostgreSQL"],
+    stats: "160+ merged PRs · 300+ modules · 900+ test files · 11-repo ecosystem",
+    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
   },
   {
-    title: "Killer Design",
-    badge: "Open Source",
+    title: "langchain-seif — Governance plane for LangChain",
+    badge: "Ecosystem",
     description:
-      "Design system com Storybook, testes unitários (Vitest) e regressão visual (Playwright).",
-    tags: ["React 19", "TypeScript", "Storybook", "Vitest", "Playwright", "Vite"],
-    links: [{ label: "GitHub", href: "https://github.com/and2carvalho/killer-design" }],
+      "Callback handler de LangChain zero-modificação que adiciona governança sobre qualquer chain: classificação, quality-gate (GROUNDED/DRIFT), assinatura de proveniência Ed25519 e trilha em transparency log. Modos local (offline) e hosted multi-tenant (HTTP, chaves sk_seif_). Design fail-soft: a governança nunca derruba a chain.",
+    tags: ["Python", "LangChain", "RAG", "MCP", "Ed25519", "Multi-tenant"],
+    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
   },
+];
+
+export const publications: Publication[] = [
   {
-    title: "Coro Echo",
-    badge: "Open Source",
-    description: "Monorepo full-stack com API REST, autenticação JWT, Prisma + PostgreSQL e frontend React + Tailwind.",
-    tags: ["React 19", "Express", "Prisma", "PostgreSQL", "JWT", "Tailwind"],
-    links: [{ label: "GitHub", href: "https://github.com/and2carvalho/coro-echo" }],
+    authors: "CARVALHO, A. C. A. de",
+    year: "2026",
+    title:
+      "On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification",
+    venue: "Zenodo",
+    doi: "10.5281/zenodo.19344678",
+    url: "https://doi.org/10.5281/zenodo.19344678",
   },
+];
+
+export const education: EducationItem[] = [
   {
-    title: "Flutter Design System",
-    badge: "Reference",
-    description: "Design system Material 3 para Flutter com theming, tokens, componentes e padrões de listas/overlays.",
-    tags: ["Flutter", "Dart", "Material 3"],
-    links: [{ label: "GitHub", href: "https://github.com/and2carvalho/system_design" }],
+    degree: "Graduação em Administração",
+    institution: "União de Faculdades Metropolitanas de Maringá",
+    period: "2016",
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
+  {
+    title: "AI / LLM",
+    tags: ["LangChain", "RAG (híbrido)", "Prompt engineering", "MCP", "Ollama", "LLM-as-judge / quality gating", "Ed25519 provenance", "AI-assisted engineering"],
+  },
   {
     title: "Frontend",
     tags: ["React", "Next.js", "React Native", "TypeScript", "Tailwind", "Styled-Components", "Zustand", "Redux", "Storybook"],
   },
   {
     title: "Backend",
-    tags: ["Node.js", "Express", "NestJS", "Python", "Django", "PostgreSQL", "MongoDB", "Redis", "Prisma"],
+    tags: ["Go", "Node.js", "Python", "gRPC", "NATS", "Express", "NestJS", "Django", "PostgreSQL", "MongoDB", "Redis", "Prisma"],
   },
   {
     title: "Infra & Testing",
