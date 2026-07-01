@@ -55,10 +55,10 @@ export type EducationItem = {
 export const site = {
   brand: "and2carvalho",
   name: "Andre C.A. de Carvalho",
-  role: "Desenvolvedor Full-Stack Sênior · foco em AI / LLM",
-  valueProp: "Integração de LLMs em produção (LangChain, RAG híbrido, prompt engineering) e governança/proveniência auditável de artefatos de IA — sobre uma base sólida de produto: integrações, performance e arquitetura sustentável.",
+  role: "Desenvolvedor Full-Stack",
+  valueProp: "7+ anos entregando produtos web e mobile em produção — Go, Python, TypeScript, microservices (gRPC, NATS), integrações de marketplaces e pagamentos — com experiência hands-on em integração de IA (Vision LLM em pipeline de OCR em produção).",
   summary:
-    "Mais de 7 anos entregando produtos web e mobile, agora focado em construir e governar sistemas de LLM em produção (LangChain, RAG híbrido, prompt engineering) e em proveniência criptográfica para artefatos de IA — autor do protocolo SEIF (seifprotocol.com). Atualmente na Beezoo Labs, construindo microservices Go (gRPC/NATS) e apps Flutter white-label.",
+    "Desenvolvedor Full-Stack com mais de 7 anos entregando produtos web e mobile em produção. Atualmente na Beezoo Labs, construindo microservices Go (gRPC/NATS), apps Flutter white-label, e um serviço de OCR em Python integrando Vision LLM via API (28% → 75% de acurácia em dataset real). Antes disso, integrações de marketplaces e gateways de pagamento em plataformas de e-commerce.",
   links: {
     github: "https://github.com/and2carvalho",
     linkedin: "https://linkedin.com/in/and2carvalho",
@@ -69,27 +69,21 @@ export const site = {
   },
   metrics: [
     { label: "Experiência", value: "7+ anos" },
-    { label: "Projeto autoral", value: "Protocolo SEIF" },
+    { label: "OCR em produção", value: "28% → 75%" },
   ] satisfies Metric[],
   proofPills: [
-    { label: "AI / LLM", detail: "LangChain · RAG · prompt engineering · MCP" },
-    { label: "Proveniência", detail: "Ed25519 · governança auditável · transparency log" },
-    { label: "Marketplaces", detail: "Mercado Livre · Amazon · Shopee" },
+    { label: "Backend", detail: "Go · Python · gRPC · NATS · Microservices" },
+    { label: "Frontend & Mobile", detail: "React · Next.js · TypeScript · Flutter" },
+    { label: "Marketplaces & Payments", detail: "Mercado Livre · Amazon · Shopee · PagarMe" },
   ] satisfies ProofPill[],
   atAGlance: [
-    { title: "AI / LLM", detail: "integração LangChain, RAG híbrido, prompt engineering e MCP" },
-    { title: "Governança de AI", detail: "proveniência Ed25519, classificação e transparency log (SEIF)" },
-    { title: "Pesquisa", detail: "proveniência de IA, governança auditável e estabilidade no treinamento de LLMs" },
     { title: "Backend", detail: "Go e Python — gRPC, NATS, microservices, APIs e filas" },
     { title: "Frontend & Mobile", detail: "React/Next.js e Flutter com foco em UX, performance e design systems" },
+    { title: "AI Integration", detail: "integração de Vision LLM via API em pipeline de OCR em produção" },
+    { title: "Marketplaces & Pagamentos", detail: "integrações com Mercado Livre, Amazon, Shopee, PagarMe e PinPag" },
     { title: "Dados & Qualidade", detail: "ETL/SQL, ElasticSearch, testes (unit/e2e), CI e observabilidade" },
+    { title: "Projeto pessoal", detail: "SEIF Protocol — pesquisa em proveniência de artefatos de IA (seifprotocol.com)" },
   ] satisfies AtAGlanceItem[],
-  seifHighlight: {
-    title: "Destaque: SEIF — protocolo de governança de AI (autoral)",
-    description:
-      "Proveniência criptográfica e governança auditável para artefatos de IA: assinatura Ed25519, ancoragem temporal opcional (OpenTimestamps), classificação e transparency log. Inclui langchain-seif — um callback handler de LangChain zero-modificação que adiciona governança (classificação, quality-gate, assinatura e trilha de auditoria) sobre qualquer chain, e RAG híbrido (lexical + embeddings Ollama) sobre o store de conhecimento. Complementar ao MCP: MCP transporta contexto; SEIF atesta integridade e autoria.",
-    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
-  },
 };
 
 export const experiences: Experience[] = [
@@ -100,8 +94,8 @@ export const experiences: Experience[] = [
     highlights: [
       "Built the Showcase microservice end-to-end (.proto → Go service → admin panel → public app): digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events",
       "Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant",
-      "Built white-label Flutter apps (loyalty, campaigns, Eventim integration, biometric login, AI batch for catalog) on a unified design system",
-      "Solo-built an OCR service for tax receipts (NF-e/NFC-e) in Python/gRPC with a hybrid cascade (QR → Tesseract → PaddleOCR → Vision LLM), raising accuracy from 28% to 75% on a 1,138 real-image dataset",
+      "Built white-label Flutter apps (loyalty, campaigns, Eventim integration, biometric login) on a unified design system",
+      "Solo-built an OCR service for tax receipts (NF-e/NFC-e) in Python/gRPC integrating existing tools in a cascade (QR → Tesseract → PaddleOCR → Vision LLM via API), raising accuracy from 28% to 75% on a 1,138 real-image dataset",
     ],
     tech: ["Go", "TypeScript", "Dart", "Python", "gRPC", "NATS", "PostgreSQL", "Flutter", "Next.js 15", "React 19", "Docker", "Kubernetes"],
   },
@@ -155,29 +149,11 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
-    title: "SEIF — Cryptographic Provenance for AI Artifacts",
-    badge: "Ecosystem",
-    featured: true,
+    title: "SEIF Protocol",
+    badge: "Reference",
     description:
-      "Proveniência criptográfica e governança auditável (sessões, ciclos, classificação) para artefatos de IA, com integração nativa a LangChain e RAG híbrido sobre o store de conhecimento.",
-    ecosystemItems: [
-      { title: "langchain-seif", subtitle: "Governance plane for LangChain (callback handler)" },
-      { title: "seif-cli", subtitle: "CLI · sign, verify, classify" },
-      { title: "seif-engine", subtitle: "Quality gate · RAG · multi-tenant API" },
-      { title: "VS Code Extension", subtitle: "Modules, cycles, sessions panel" },
-      { title: "Dashboard", subtitle: "Next.js · Audit trail · Sessions" },
-      { title: "Transparency Log", subtitle: "Append-only · Rekor-shaped for AI" },
-    ],
-    tags: ["Python", "TypeScript", "LangChain", "RAG", "Ollama", "MCP", "Ed25519", "OpenTimestamps", "Next.js", "PostgreSQL"],
-    stats: "160+ merged PRs · 300+ modules · 900+ test files · 11-repo ecosystem",
-    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
-  },
-  {
-    title: "langchain-seif — Governance plane for LangChain",
-    badge: "Ecosystem",
-    description:
-      "Callback handler de LangChain zero-modificação que adiciona governança sobre qualquer chain: classificação, quality-gate (GROUNDED/DRIFT), assinatura de proveniência Ed25519 e trilha em transparency log. Modos local (offline) e hosted multi-tenant (HTTP, chaves sk_seif_). Design fail-soft: a governança nunca derruba a chain.",
-    tags: ["Python", "LangChain", "RAG", "MCP", "Ed25519", "Multi-tenant"],
+      "Projeto pessoal de pesquisa em proveniência criptográfica (Ed25519, ancoragem temporal opcional via OpenTimestamps) e governança auditável para artefatos gerados por IA. Motivou a publicação acadêmica listada em Publicações.",
+    tags: ["Python", "TypeScript", "Ed25519", "OpenTimestamps"],
     links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
   },
 ];
@@ -204,8 +180,8 @@ export const education: EducationItem[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "AI / LLM",
-    tags: ["LangChain", "RAG (híbrido)", "Prompt engineering", "MCP", "Ollama", "LLM-as-judge / quality gating", "Ed25519 provenance", "AI-assisted engineering"],
+    title: "AI Integration",
+    tags: ["Integração de LLM em produção", "Vision LLM (via API)", "OCR pipeline", "Ollama", "MCP", "AI-assisted engineering"],
   },
   {
     title: "Frontend",

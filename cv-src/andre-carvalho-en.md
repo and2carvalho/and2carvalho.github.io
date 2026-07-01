@@ -7,7 +7,7 @@ lang: en
 
 ::: {.subhead}
 ::: {.subhead-title}
-AI-Augmented Full-Stack Developer
+Full-Stack Developer
 :::
 
 ::: {.subhead-links}
@@ -17,44 +17,15 @@ Email: [and2carvalho@gmail.com](mailto:and2carvalho@gmail.com) • [linkedin.com
 :::
 
 ::: {.summary}
-Full-Stack Engineer with 7+ years shipping web and mobile products, now focused on building and governing LLM systems in production — LangChain integration, hybrid RAG, prompt engineering, and cryptographic provenance for AI-generated artifacts (author of the SEIF protocol — seifprotocol.com). All on a solid product foundation: marketplace/payment integrations, performance, and maintainable architecture, with a strong data/BI background (ETL, SQL, Python).
+Full-Stack Developer with 7+ years shipping web and mobile products in production, with hands-on AI integration experience (Vision LLM in a production OCR pipeline). Solid foundation in Go/Python/TypeScript, microservices (gRPC, NATS), marketplace/payment integrations, and a strong data background (ETL, SQL, Python).
 :::
 
 ::: {.chips}
-- **AI / LLM**: LangChain · hybrid RAG · prompt engineering · MCP · Ollama
-- **AI governance (SEIF)**: Ed25519 provenance · auditable governance · transparency log
+- **Backend**: Go · Python · gRPC · NATS · Microservices
+- **Frontend & Mobile**: React · Next.js · TypeScript · Flutter
 - **Marketplaces**: Mercado Livre · Amazon · Shopee
 - **Payments**: PagarMe · PinPag
-- **Microservices**: Go · gRPC · NATS · Kubernetes
-:::
-
-## Highlight (AI)
-
-::: {.role}
-::: {.rolehead}
-::: {}
-::: {.role-title}
-SEIF — Cryptographic provenance & governance for AI
-:::
-
-::: {.role-company}
-Author · AI provenance & governance protocol · seifprotocol.com
-:::
-:::
-
-::: {.role-period}
-2026 – Present
-:::
-:::
-
-- Designed a protocol for **cryptographic provenance + auditable governance** (sessions, cycles, classification) over AI-generated artifacts — Ed25519 signing with optional time-anchoring (OpenTimestamps).
-- Built **`langchain-seif`** (Python package): a zero-modification **LangChain callback handler** that adds a governance plane — classification, quality-gating, provenance signing, and a transparency-log trail — over any chain, in local or hosted multi-tenant mode.
-- Implemented **hybrid RAG** over the knowledge store (lexical + Ollama embeddings) with a cost-aware retrieval trigger; context compression from 50k+ raw tokens to ~3–5k.
-- Authored the grounding / system-prompt layer and ran **empirical prompt-engineering experiments** (A/B across multiple models) on whether framing changes correctness — measured, not assumed.
-
-::: {.tech}
-`Python` `TypeScript` `LangChain` `RAG` `Ollama` `Ed25519` `OpenTimestamps` `MCP` `Next.js` `PostgreSQL`
-:::
+- **AI Integration**: Vision LLM (via API) · OCR pipeline · Ollama · MCP
 :::
 
 ## Experience
@@ -78,8 +49,8 @@ Jan 2025 – Present
 
 - Built from scratch the Showcase microservice (digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events) plus its mobile-first frontend — end-to-end feature: .proto → Go service → admin panel → public app.
 - Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant.
-- Developed white-label Flutter apps for consumers and partners — loyalty, campaigns, Eventim integration, biometric login, AI batch for catalog, and unified design system.
-- Solo-built an OCR service for Brazilian tax receipts (NF-e/NFC-e) in Python/gRPC with a hybrid cascade (QR → Tesseract → PaddleOCR → Vision LLM), raising accuracy from 28% to 75% on a 1,138 real-image dataset; deployed on Docker + Kubernetes.
+- Developed white-label Flutter apps for consumers and partners — loyalty, campaigns, Eventim integration, biometric login, and unified design system.
+- Solo-built an OCR service for Brazilian tax receipts (NF-e/NFC-e) in Python/gRPC integrating existing tools in a cascade (QR → Tesseract → PaddleOCR → Vision LLM via API), raising accuracy from 28% to 75% on a 1,138 real-image dataset; deployed on Docker + Kubernetes.
 
 ::: {.tech}
 `Go` `TypeScript` `Dart` `Python` `gRPC` `Protobuf` `NATS` `PostgreSQL` `Next.js 15` `React 19` `Flutter` `Docker` `Kubernetes` `Tilt`
@@ -169,8 +140,8 @@ Upwork — Data & Business Systems
 
 ::: {.two-col}
 ::: {.box}
-**AI / LLM**<br />
-<span class="muted">LLM integration (LangChain) · Hybrid RAG · Prompt engineering · MCP · Ollama · LLM-as-judge / quality gating · Ed25519 provenance</span>
+**AI Integration**<br />
+<span class="muted">Production LLM integration · Vision LLM via API · OCR pipeline · Ollama · MCP</span>
 :::
 ::: {.box}
 **Frontend**<br />
@@ -193,6 +164,29 @@ Upwork — Data & Business Systems
 ## Education
 
 - B.B.A. in Business Administration — União de Faculdades Metropolitanas de Maringá, 2016
+
+## Personal Project
+
+::: {.role}
+::: {.rolehead}
+::: {}
+::: {.role-title}
+SEIF Protocol — Research on provenance of AI-generated artifacts
+:::
+
+::: {.role-company}
+Personal project · seifprotocol.com
+:::
+:::
+
+::: {.role-period}
+2026 – Present
+:::
+:::
+
+- Personal research project on cryptographic provenance (Ed25519, optional time-anchoring via OpenTimestamps) and auditable governance for AI-generated artifacts.
+- Motivated an academic publication on Zenodo (see Publications).
+:::
 
 ## Publications
 

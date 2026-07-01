@@ -108,23 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="seif" className="section-alt" data-reveal>
-        <div className="container">
-          <h2>{site.seifHighlight.title}</h2>
-          <p className="section-subtitle">Open-source · proveniência · governança auditável</p>
-          <div className="seif-highlight">
-            <p className="seif-desc">{site.seifHighlight.description}</p>
-            <div className="project-links">
-              {site.seifHighlight.links.map((l) => (
-                <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-                  {l.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="projects" className="section-alt" data-reveal>
         <div className="container">
           <h2>Projetos</h2>
