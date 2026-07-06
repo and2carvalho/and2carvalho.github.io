@@ -163,6 +163,7 @@ Upwork — Data & Business Systems
 
 ## Formação
 
+- Pós-graduação em Business Intelligence (não concluída) — Unicesumar, 2017–2018
 - Graduação em Administração — União de Faculdades Metropolitanas de Maringá, 2016
 
 ## Projeto pessoal

@@ -172,6 +172,11 @@ export const publications: Publication[] = [
 
 export const education: EducationItem[] = [
   {
+    degree: "Pós-graduação em Business Intelligence (não concluída)",
+    institution: "Unicesumar",
+    period: "2017 – 2018",
+  },
+  {
     degree: "Graduação em Administração",
     institution: "União de Faculdades Metropolitanas de Maringá",
     period: "2016",
