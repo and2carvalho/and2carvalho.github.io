@@ -1,12 +1,6 @@
 import { NavClient } from "@/components/NavClient";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
-import { education, experiences, projects, publications, site, skillGroups } from "@/content/site";
-
-function badgeClass(badge: string) {
-  if (badge === "Ecosystem") return "badge badge-ecosystem";
-  if (badge === "Open Source") return "badge badge-oss";
-  return "badge badge-pro";
-}
+import { education, experiences, languages, site, skillGroups } from "@/content/site";
 
 export default function Home() {
   return (
@@ -20,6 +14,7 @@ export default function Home() {
             <div className="hero-text">
               <h1>{site.name}</h1>
               <p className="role">{site.role}</p>
+              <p className="location">{site.location}</p>
               <p className="value-prop">{site.valueProp}</p>
               <p className="summary">{site.summary}</p>
 
@@ -108,87 +103,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="section-alt" data-reveal>
+      <section id="education" className="section-alt" data-reveal>
         <div className="container">
-          <h2>Projetos</h2>
-          <p className="section-subtitle">Produtos e ferramentas que construí.</p>
-
-          <div className="projects-grid">
-            {projects.map((p) => (
-              <div key={p.title} className={p.featured ? "project project-featured project-span-2" : "project"}>
-                <div className="project-header">
-                  <h3>{p.title}</h3>
-                  <span className={badgeClass(p.badge)}>{p.badge}</span>
-                </div>
-
-                <p className="project-desc">{p.description}</p>
-
-                {p.ecosystemItems && (
-                  <div className="ecosystem-grid">
-                    {p.ecosystemItems.map((it) => (
-                      <div className="eco-item" key={it.title}>
-                        <strong>{it.title}</strong>
-                        <span>{it.subtitle}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                <div className="tags">
-                  {p.tags.map((t) => (
-                    <span key={t}>{t}</span>
-                  ))}
-                </div>
-
-                {p.stats && <div className="project-stats">{p.stats}</div>}
-
-                <div className="project-links">
-                  {p.links.map((l) => (
-                    <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-                      {l.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="publications" data-reveal>
-        <div className="container">
-          <h2>Publicações</h2>
-          <p className="section-subtitle">Produção científica e técnica.</p>
-
-          <ul className="pub-list">
-            {publications.map((p) => (
-              <li key={p.title} className="pub-item">
-                <div className="pub-meta">
-                  {p.authors} ({p.year}).
-                </div>
-                <div className="pub-title">
-                  {p.url ? (
-                    <a href={p.url} target="_blank" rel="noreferrer">
-                      {p.title}
-                    </a>
-                  ) : (
-                    p.title
-                  )}
-                </div>
-                <div className="pub-venue">
-                  {p.venue}
-                  {p.doi ? ` · DOI: ${p.doi}` : ""}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section id="education" data-reveal>
-        <div className="container">
-          <h2>Formação</h2>
-          <p className="section-subtitle">Formação acadêmica.</p>
+          <h2>Formação acadêmica e pesquisa</h2>
+          <p className="section-subtitle">Mestrado em andamento, linha de pesquisa e ferramental público.</p>
 
           <ul className="edu-list">
             {education.map((e) => (
@@ -197,6 +115,42 @@ export default function Home() {
                 <div className="edu-meta">
                   {e.institution} · {e.period}
                 </div>
+                {e.highlights && (
+                  <ul className="edu-highlights">
+                    {e.highlights.map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                )}
+                {e.links && (
+                  <div className="edu-links">
+                    {e.links.map((l) => (
+                      <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="lang-title">Idiomas</h3>
+          <ul className="lang-list">
+            {languages.map((l) => (
+              <li key={l.language}>
+                <strong>{l.language}</strong>
+                <span>
+                  {l.level}
+                  {l.link && (
+                    <>
+                      {" · "}
+                      <a href={l.link.href} target="_blank" rel="noreferrer">
+                        {l.link.label}
+                      </a>
+                    </>
+                  )}
+                </span>
               </li>
             ))}
           </ul>

@@ -1,188 +1,174 @@
 @page {
-  margin: 13mm 13mm;
+  size: A4;
+  margin: 14mm 15mm 13mm 15mm;
+}
+
+:root {
+  --accent: #1e40af;
+  --ink: #111827;
+  --body: #1f2937;
+  --muted: #4b5563;
+  --faint: #6b7280;
+  --rule: #d1d5db;
 }
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Arial, sans-serif;
-  font-size: 10pt;
-  line-height: 1.28;
-  color: #111827;
+  font-family: "Helvetica Neue", Helvetica, Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 9.6pt;
+  line-height: 1.38;
+  color: var(--body);
 }
 
 body {
   margin: 0;
 }
 
+/* Pandoc wraps div text in <p>; keep block spacing controlled by the containers. */
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Header ---------- */
+
 .topbar {
-  display: block;
-  border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 8px;
-  margin-bottom: 10px;
+  padding-bottom: 9px;
+  margin-bottom: 4px;
+  border-bottom: 1.5px solid var(--ink);
 }
 
 h1 {
   margin: 0;
-  font-size: 20pt;
+  font-size: 22pt;
   line-height: 1.05;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
-}
-
-.subhead {
-  margin-top: 6px;
-  color: #374151;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
 }
 
 .subhead-title {
-  font-size: 10.25pt;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  color: #111827;
-  white-space: nowrap;
+  margin-top: 4px;
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--accent);
 }
 
-.subhead-links {
-  margin-top: 2px;
+.contact {
+  margin-top: 5px;
   font-size: 9pt;
-  color: #374151;
-  white-space: nowrap;
+  line-height: 1.45;
+  color: var(--muted);
 }
 
-.subhead-links a {
-  color: #111827;
-  text-decoration: none;
-}
+/* ---------- Sections ---------- */
 
-.subhead-links a:hover {
-  text-decoration: underline;
+h2 {
+  margin: 13px 0 6px 0;
+  padding-bottom: 3px;
+  font-size: 9.6pt;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 0.75px solid var(--rule);
+  break-after: avoid;
+  page-break-after: avoid;
 }
 
 .summary {
-  margin: 0 0 10px 0;
-  color: #111827;
+  color: var(--body);
 }
 
-.chips {
-  margin: 6px 0 10px 0;
-}
-
-.chips ul {
+/* Label + values rows (skills, languages): single column so text extraction keeps reading order. */
+.skills ul {
   margin: 0;
-  padding-left: 16px;
-  color: #374151;
+  padding: 0;
+  list-style: none;
 }
 
-.chips li {
-  margin: 2px 0;
+.skills li {
+  display: flex;
+  gap: 10px;
+  margin: 0 0 2px 0;
 }
 
-.chips li::marker {
-  color: #6b7280;
+.skills .k {
+  flex: 0 0 31mm;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-.chips strong {
-  color: #111827;
-  font-weight: 800;
+.skills .v {
+  flex: 1 1 auto;
 }
 
-h2 {
-  font-size: 11pt;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 11px 0 6px 0;
-  color: #111827;
-}
+/* ---------- Roles ---------- */
 
 .role {
-  border: none;
-  border-radius: 0;
-  padding: 0;
   margin-bottom: 9px;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
-.pagebreak {
-  break-before: page;
-  page-break-before: always;
-  height: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.rolehead {
+/* Pandoc puts the title/period spans inside a <p>, so the flex row lives there. */
+.rolehead p {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
   align-items: baseline;
+  gap: 12px;
 }
 
 .role-title {
-  font-weight: 800;
-}
-
-.role-company {
-  margin-top: 2px;
-  color: #111827;
-  font-weight: 700;
+  color: var(--ink);
+  font-size: 10.2pt;
 }
 
 .role-period {
-  color: #6b7280;
-  font-size: 9.5pt;
+  flex: 0 0 auto;
+  font-size: 9pt;
+  color: var(--muted);
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
-ul {
-  margin: 6px 0 0 18px;
-  padding: 0;
-  color: #374151;
-}
-
-li {
-  margin: 2px 0;
-}
-
-.tech {
-  margin-top: 6px;
-  display: block;
-  color: #6b7280;
-  font-size: 9.5pt;
-}
-
-.tech span {
-  font-size: inherit;
-  color: inherit;
-  border: none;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.box {
-  border: none;
-  border-radius: 0;
-  padding: 0;
-}
-
-.muted {
-  color: #6b7280;
-}
-
-/* Make PDFs more ATS-friendly: avoid too much decoration */
-.chip strong,
-.role-title,
 .role-company {
-  -webkit-font-smoothing: antialiased;
+  margin-top: 1px;
+  font-size: 9pt;
+  font-style: italic;
+  color: var(--muted);
 }
 
-/* Slight separators to guide scanning */
-h2 {
-  padding-top: 6px;
-  border-top: 1px solid #f1f5f9;
+.role ul {
+  margin: 4px 0 0 0;
+  padding-left: 13px;
 }
 
+.role li {
+  margin: 0 0 2px 0;
+  padding-left: 1px;
+}
+
+.role li::marker {
+  color: var(--faint);
+}
+
+.stack {
+  margin-top: 3px;
+  font-size: 8.6pt;
+  color: var(--faint);
+}
+
+.role a,
+.contact a,
+.skills a {
+  color: var(--accent);
+}

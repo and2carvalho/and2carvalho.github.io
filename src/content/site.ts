@@ -6,17 +6,6 @@ export type Experience = {
   tech: string[];
 };
 
-export type Project = {
-  title: string;
-  badge: "Ecosystem" | "Open Source" | "Reference";
-  featured?: boolean;
-  description: string;
-  tags: string[];
-  stats?: string;
-  links: Array<{ label: string; href: string }>;
-  ecosystemItems?: Array<{ title: string; subtitle: string }>;
-};
-
 export type SkillGroup = {
   title: string;
   tags: string[];
@@ -37,28 +26,29 @@ export type AtAGlanceItem = {
   detail: string;
 };
 
-export type Publication = {
-  authors: string;
-  year: string;
-  title: string;
-  venue: string;
-  doi?: string;
-  url?: string;
-};
-
 export type EducationItem = {
   degree: string;
   institution: string;
   period: string;
+  highlights?: string[];
+  links?: Array<{ label: string; href: string }>;
+};
+
+export type Language = {
+  language: string;
+  level: string;
+  link?: { label: string; href: string };
 };
 
 export const site = {
   brand: "and2carvalho",
   name: "Andre C.A. de Carvalho",
-  role: "Desenvolvedor Full-Stack",
-  valueProp: "7+ anos entregando produtos web e mobile em produção — Go, Python, TypeScript, microservices (gRPC, NATS), integrações de marketplaces e pagamentos — com experiência hands-on em integração de IA (Vision LLM em pipeline de OCR em produção).",
+  role: "Desenvolvedor Full-Stack · Go · TypeScript · Python · Flutter",
+  location: "Uberlândia, MG, Brasil · Remoto, híbrido ou presencial",
+  valueProp:
+    "7+ anos entregando produtos web e mobile em produção: microsserviços em Go (gRPC, NATS), frontends React/Next.js, apps Flutter e integrações de marketplaces e pagamentos.",
   summary:
-    "Desenvolvedor Full-Stack com mais de 7 anos entregando produtos web e mobile em produção. Atualmente na Beezoo Labs, construindo microservices Go (gRPC/NATS), apps Flutter white-label, e um serviço de OCR em Python integrando Vision LLM via API (28% → 75% de acurácia em dataset real). Antes disso, integrações de marketplaces e gateways de pagamento em plataformas de e-commerce.",
+    "Experiência prática com IA aplicada em produção: pipeline de OCR com Vision LLM que elevou a acurácia de 28% para 75%. Base sólida em dados (ETL, SQL, Python). Mestrado em Ciência da Computação em curso na UFU, com pesquisa em observabilidade de sistemas e verificação de comportamento computacional.",
   links: {
     github: "https://github.com/and2carvalho",
     linkedin: "https://linkedin.com/in/and2carvalho",
@@ -72,109 +62,86 @@ export const site = {
     { label: "OCR em produção", value: "28% → 75%" },
   ] satisfies Metric[],
   proofPills: [
-    { label: "Backend", detail: "Go · Python · gRPC · NATS · Microservices" },
+    { label: "Backend", detail: "Go · Python · gRPC · NATS · Microsserviços" },
     { label: "Frontend & Mobile", detail: "React · Next.js · TypeScript · Flutter" },
-    { label: "Marketplaces & Payments", detail: "Mercado Livre · Amazon · Shopee · PagarMe" },
+    { label: "Integrações", detail: "Mercado Livre · Amazon · Shopee · PagarMe · PinPag" },
   ] satisfies ProofPill[],
   atAGlance: [
-    { title: "Backend", detail: "Go e Python — gRPC, NATS, microservices, APIs e filas" },
-    { title: "Frontend & Mobile", detail: "React/Next.js e Flutter com foco em UX, performance e design systems" },
-    { title: "AI Integration", detail: "integração de Vision LLM via API em pipeline de OCR em produção" },
-    { title: "Marketplaces & Pagamentos", detail: "integrações com Mercado Livre, Amazon, Shopee, PagarMe e PinPag" },
-    { title: "Dados & Qualidade", detail: "ETL/SQL, ElasticSearch, testes (unit/e2e), CI e observabilidade" },
-    { title: "Projeto pessoal", detail: "SEIF Protocol — pesquisa em proveniência de artefatos de IA (seifprotocol.com)" },
+    { title: "Backend", detail: "Go e Python — gRPC, NATS JetStream, microsserviços, Outbox Pattern" },
+    { title: "Frontend & Mobile", detail: "React/Next.js e Flutter, com design systems e apps white-label" },
+    { title: "IA aplicada", detail: "Vision LLM via API em pipeline de OCR em produção" },
+    { title: "Integrações", detail: "marketplaces (Mercado Livre, Amazon, Shopee) e pagamentos (PagarMe, PinPag)" },
+    { title: "Dados", detail: "ETL/SQL, ElasticSearch, Power BI" },
+    { title: "Pesquisa", detail: "Mestrado em Ciência da Computação (UFU) — observabilidade de sistemas" },
   ] satisfies AtAGlanceItem[],
 };
 
 export const experiences: Experience[] = [
   {
-    date: "2025 – Present",
+    date: "jan/2025 – atual",
     role: "Full-Stack Engineer",
-    company: "Beezoo Labs — Multi-tenant SaaS for loyalty & digital commerce (malls & retail)",
+    company: "Beezoo Labs — Plataforma SaaS multi-tenant de fidelidade e comércio digital para shoppings e varejo",
     highlights: [
-      "Built the Showcase microservice end-to-end (.proto → Go service → admin panel → public app): digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events",
-      "Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant",
-      "Built white-label Flutter apps (loyalty, campaigns, Eventim integration, biometric login) on a unified design system",
-      "Solo-built an OCR service for tax receipts (NF-e/NFC-e) in Python/gRPC integrating existing tools in a cascade (QR → Tesseract → PaddleOCR → Vision LLM via API), raising accuracy from 28% to 75% on a 1,138 real-image dataset",
+      "Entreguei do zero o microsserviço Showcase (vitrines digitais com QR codes, pricing policies e enriquecimento de catálogo via eventos NATS) e seu frontend mobile-first — feature ponta a ponta: .proto → serviço Go → painel admin → app público.",
+      "Liderei a iniciativa app-whitelabel no monorepo de microsserviços Go (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), habilitando configuração multi-tier de apps mobile por tenant.",
+      "Desenvolvi os apps Flutter white-label para consumidor e parceiros — loyalty, campanhas, integração Eventim, login biométrico e design system unificado.",
+      "Construí sozinho um serviço de OCR para NF-e/NFC-e em Python/gRPC, combinando QR → Tesseract → PaddleOCR → Vision LLM (via API) em cascata; elevei a acurácia de 28% para 75% em dataset de 1.138 imagens reais; deploy em Docker + Kubernetes.",
     ],
-    tech: ["Go", "TypeScript", "Dart", "Python", "gRPC", "NATS", "PostgreSQL", "Flutter", "Next.js 15", "React 19", "Docker", "Kubernetes"],
+    tech: ["Go", "Python", "TypeScript", "Dart", "gRPC", "NATS", "PostgreSQL", "Next.js", "React", "Flutter", "Docker", "Kubernetes"],
   },
   {
-    date: "2022 – 2024",
+    date: "mai/2022 – dez/2024",
     role: "Software Engineer",
-    company: "Hubsell — E-commerce Integration Platform",
+    company: "Hubsell — Plataforma de integração para e-commerce",
     highlights: [
-      "Frontend and integration development on SellerCenter, connecting sellers to Mercado Livre, Amazon, Shopee, and other marketplaces",
-      "Built POS (Point of Sale) and Shopping Assistant features that directly improved seller conversion",
-      "Integrated payment gateways (PagarMe, PinPag) into the seller dashboard",
-      "Reduced loading times on heavy screens (dashboards, sales panels) using ElasticSearch + React Query",
-      "Shipped a mobile app for Android and iOS using Expo",
+      "Desenvolvi frontend e integrações do Seller Center, a interface pela qual os sellers operam suas vendas em Mercado Livre, Amazon, Shopee e outros marketplaces.",
+      "Construí as features de PDV (Point of Sale) e Shopping Assistant, voltadas à conversão dos sellers.",
+      "Integrei gateways de pagamento (PagarMe, PinPag) ao dashboard do seller.",
+      "Ataquei os gargalos de carregamento de telas pesadas (dashboards, painéis de vendas) com busca via ElasticSearch e cache de dados no cliente com React Query.",
+      "Publiquei app mobile para Android e iOS com Expo.",
     ],
-    tech: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "MongoDB",
-      "ElasticSearch",
-      "Zustand",
-      "React Query",
-      "Expo",
-      "Firebase",
-    ],
+    tech: ["React", "Next.js", "Node.js", "MongoDB", "ElasticSearch", "Zustand", "React Query", "Expo", "Firebase"],
   },
   {
-    date: "2020 – 2022",
+    date: "dez/2020 – mai/2022",
     role: "Full-Stack Developer",
-    company: "3 UP Tech — 3Ponto Financial App",
+    company: "3 UP Tech — 3Ponto, plataforma de gestão financeira (app mobile + dashboard web)",
     highlights: [
-      "Owned the full product lifecycle of a financial management platform: mobile app (React Native) + web dashboard (React)",
-      "Backend development using microservices architecture",
-      "Led frontend development, from feature implementation to bug resolution and performance tuning",
-      "Facilitated migrations and integrations with legacy systems",
+      "Atuei no ciclo completo do produto — app mobile (React Native) e dashboard web (React) —, da tradução de requisitos de negócio à entrega em produção.",
+      "Desenvolvi serviços de backend em arquitetura de microsserviços (Node.js/Express, PostgreSQL).",
+      "Conduzi migrações e integrações com sistemas legados.",
+      "Liderei o front-end: implementação de features, correção de bugs e ajuste de performance.",
     ],
-    tech: ["React", "React Native", "Node.js", "PostgreSQL", "Express", "Microservices"],
+    tech: ["React", "React Native", "Node.js", "Express", "PostgreSQL", "Microsserviços"],
   },
   {
     date: "2016 – 2019",
-    role: "Freelance Consultant",
-    company: "Upwork — Data & Business Systems",
+    role: "Consultor Freelance — Dados & Sistemas de Gestão",
+    company: "Upwork",
     highlights: [
-      "Built ETL pipelines and Power BI dashboards for help desk analytics at mid-size companies",
-      "Implemented a full ERP system (Odoo/OpenERP) with custom business workflows",
-      "Automated data models with SQL and Python for executive dashboards",
+      "Construí pipelines de ETL e dashboards Power BI para analytics de help desk e operação.",
+      "Implementei um ERP (Odoo/OpenERP) com workflows de negócio e automações.",
+      "Automatizei modelos de dados com SQL e Python para dashboards executivos.",
     ],
-    tech: ["Python", "Power BI", "PostgreSQL", "MySQL", "Odoo"],
-  },
-];
-
-export const projects: Project[] = [
-  {
-    title: "SEIF Protocol",
-    badge: "Reference",
-    description:
-      "Projeto pessoal de pesquisa em proveniência criptográfica (Ed25519, ancoragem temporal opcional via OpenTimestamps) e governança auditável para artefatos gerados por IA. Motivou a publicação acadêmica listada em Publicações.",
-    tags: ["Python", "TypeScript", "Ed25519", "OpenTimestamps"],
-    links: [{ label: "seifprotocol.com", href: "https://www.seifprotocol.com" }],
-  },
-];
-
-export const publications: Publication[] = [
-  {
-    authors: "CARVALHO, A. C. A. de",
-    year: "2026",
-    title:
-      "On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification",
-    venue: "Zenodo",
-    doi: "10.5281/zenodo.19344678",
-    url: "https://doi.org/10.5281/zenodo.19344678",
+    tech: ["Python", "SQL", "Power BI", "PostgreSQL", "MySQL", "Odoo"],
   },
 ];
 
 export const education: EducationItem[] = [
   {
-    degree: "Mestrado em Ciência da Computação (aluno especial) — em curso",
-    institution: "Universidade Federal de Uberlândia (UFU)",
-    period: "2026 – presente",
+    degree: "Mestrado em Ciência da Computação — em curso",
+    institution: "Universidade Federal de Uberlândia (PPGCO/UFU)",
+    period: "2026 – atual",
+    highlights: [
+      "Pesquisa: representações mínimas de traços de execução para observabilidade de sistemas — assinaturas compactas de acesso à memória que detectam degradação de desempenho (ex.: O(n log n) → O(n²)) sem calibração por classe, com critério explícito de quando a representação deixa de ser suficiente.",
+      "Método: hipóteses pré-registradas e experimentos reprodutíveis (TypeScript + Python); série de artigos em preparação.",
+      "Ferramental de pesquisa — SEIF Protocol: proveniência criptográfica (Ed25519, ancoragem temporal via OpenTimestamps) e governança auditável do trabalho assistido por IA, aplicado na própria pesquisa.",
+    ],
+    links: [
+      { label: "seifprotocol.com", href: "https://www.seifprotocol.com" },
+      { label: "Carimbo", href: "https://carimbo.seifprotocol.com" },
+      { label: "Vigília", href: "https://vigilia.seifprotocol.com" },
+    ],
   },
   {
     degree: "Graduação em Administração",
@@ -183,26 +150,38 @@ export const education: EducationItem[] = [
   },
 ];
 
-export const skillGroups: SkillGroup[] = [
+export const languages: Language[] = [
+  { language: "Português", level: "Nativo" },
   {
-    title: "AI Integration",
-    tags: ["Integração de LLM em produção", "Vision LLM (via API)", "OCR pipeline", "Ollama", "MCP", "AI-assisted engineering"],
-  },
-  {
-    title: "Frontend",
-    tags: ["React", "Next.js", "React Native", "TypeScript", "Tailwind", "Styled-Components", "Zustand", "Redux", "Storybook"],
-  },
-  {
-    title: "Backend",
-    tags: ["Go", "Node.js", "Python", "gRPC", "NATS", "Express", "NestJS", "Django", "PostgreSQL", "MongoDB", "Redis", "Prisma"],
-  },
-  {
-    title: "Infra & Testing",
-    tags: ["Docker", "Git", "Firebase", "Vercel", "ElasticSearch", "Jest", "Vitest", "Playwright"],
-  },
-  {
-    title: "Mobile & Other",
-    tags: ["Expo", "Flutter", "Tauri", "Power BI", "Swagger", "Microservices"],
+    language: "Inglês",
+    level: "C2 Proficient — certificado EF SET",
+    link: { label: "cert.efset.org/en/Eukv37", href: "https://cert.efset.org/en/Eukv37" },
   },
 ];
 
+export const skillGroups: SkillGroup[] = [
+  {
+    title: "IA aplicada",
+    tags: ["Vision LLM via API", "Pipeline de OCR", "Ollama", "MCP", "Proveniência de artefatos de IA"],
+  },
+  {
+    title: "Backend",
+    tags: ["Go", "Python", "Node.js", "gRPC", "REST", "NATS JetStream", "Microsserviços", "Outbox Pattern", "KrakenD"],
+  },
+  {
+    title: "Frontend & Mobile",
+    tags: ["React", "Next.js", "TypeScript", "React Query", "Zustand", "Storybook", "Flutter", "React Native", "Expo"],
+  },
+  {
+    title: "Dados & Infra",
+    tags: ["PostgreSQL", "MongoDB", "Redis", "ElasticSearch", "Docker", "Kubernetes", "ETL/SQL", "Power BI"],
+  },
+  {
+    title: "Integrações",
+    tags: ["Mercado Livre", "Amazon", "Shopee", "PagarMe", "PinPag", "Eventim"],
+  },
+  {
+    title: "Qualidade",
+    tags: ["Jest", "Vitest", "Playwright", "CI/CD"],
+  },
+];

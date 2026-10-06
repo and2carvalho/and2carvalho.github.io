@@ -1,194 +1,135 @@
 ---
 lang: en
+pagetitle: Andre C.A. de Carvalho — Full-Stack Developer
 ---
 
 ::: {.topbar}
 # Andre C.A. de Carvalho
 
-::: {.subhead}
 ::: {.subhead-title}
-Full-Stack Developer
+Full-Stack Developer · Go · TypeScript · Python · Flutter
 :::
 
-::: {.subhead-links}
-Email: [and2carvalho@gmail.com](mailto:and2carvalho@gmail.com) • [linkedin.com/in/and2carvalho](https://linkedin.com/in/and2carvalho) • [github.com/and2carvalho](https://github.com/and2carvalho)
+::: {.contact}
+Uberlândia, MG, Brazil · Open to remote, hybrid, or on-site<br />
+[and2carvalho@gmail.com](mailto:and2carvalho@gmail.com) · [linkedin.com/in/and2carvalho](https://linkedin.com/in/and2carvalho) · [github.com/and2carvalho](https://github.com/and2carvalho)
 :::
 :::
-:::
+
+## Summary
 
 ::: {.summary}
-Full-Stack Developer with 7+ years shipping web and mobile products in production, with hands-on AI integration experience (Vision LLM in a production OCR pipeline). Solid foundation in Go/Python/TypeScript, microservices (gRPC, NATS), marketplace/payment integrations, and a strong data background (ETL, SQL, Python).
+Full-Stack Developer with 7+ years shipping web and mobile products to production: Go microservices (gRPC, NATS), React/Next.js frontends, Flutter apps, and marketplace and payment integrations. Hands-on applied AI in production: a Vision LLM–backed OCR pipeline that raised accuracy from 28% to 75%. Strong data background (ETL, SQL, Python). Currently pursuing an M.Sc. in Computer Science at UFU, researching systems observability and verification of computational behavior.
 :::
 
-::: {.chips}
-- **Backend**: Go · Python · gRPC · NATS · Microservices
-- **Frontend & Mobile**: React · Next.js · TypeScript · Flutter
-- **Marketplaces**: Mercado Livre · Amazon · Shopee
-- **Payments**: PagarMe · PinPag
-- **AI Integration**: Vision LLM (via API) · OCR pipeline · Ollama · MCP
+## Skills
+
+::: {.skills}
+- [Applied AI]{.k} [Vision LLM via API · OCR pipeline · Ollama · MCP · AI artifact provenance]{.v}
+- [Backend]{.k} [Go · Python · Node.js · gRPC · REST · NATS JetStream · Microservices · Outbox Pattern · KrakenD]{.v}
+- [Frontend & Mobile]{.k} [React · Next.js · TypeScript · React Query · Zustand · Storybook · Flutter · React Native]{.v}
+- [Data & Infra]{.k} [PostgreSQL · MongoDB · Redis · ElasticSearch · Docker · Kubernetes · ETL/SQL · Power BI]{.v}
+- [Integrations]{.k} [Mercado Livre · Amazon · Shopee · PagarMe · PinPag · Eventim]{.v}
+- [Quality]{.k} [Jest · Vitest · Playwright · CI/CD]{.v}
 :::
 
 ## Experience
 
 ::: {.role}
 ::: {.rolehead}
-::: {}
-::: {.role-title}
-Full-Stack Engineer
+[**Full-Stack Engineer** · Beezoo Labs]{.role-title}
+[Jan 2025 – Present]{.role-period}
 :::
 
 ::: {.role-company}
-Beezoo Labs — Multi-tenant SaaS platform for loyalty and digital commerce (malls & retail)
-:::
-:::
-
-::: {.role-period}
-Jan 2025 – Present
-:::
+Multi-tenant SaaS platform for loyalty and digital commerce (malls & retail)
 :::
 
-- Built from scratch the Showcase microservice (digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events) plus its mobile-first frontend — end-to-end feature: .proto → Go service → admin panel → public app.
-- Led the app-whitelabel initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant.
-- Developed white-label Flutter apps for consumers and partners — loyalty, campaigns, Eventim integration, biometric login, and unified design system.
-- Solo-built an OCR service for Brazilian tax receipts (NF-e/NFC-e) in Python/gRPC integrating existing tools in a cascade (QR → Tesseract → PaddleOCR → Vision LLM via API), raising accuracy from 28% to 75% on a 1,138 real-image dataset; deployed on Docker + Kubernetes.
+- Built from scratch the **Showcase** microservice (digital storefronts with QR codes, pricing policies, and catalog enrichment via NATS events) plus its mobile-first frontend — end-to-end feature: .proto → Go service → admin panel → public app.
+- Led the **app-whitelabel** initiative in the Go microservices monorepo (gRPC, NATS JetStream, Outbox Pattern, PostgreSQL, KrakenD), enabling multi-tier mobile app configuration per tenant.
+- Developed white-label **Flutter** apps for consumers and partners — loyalty, campaigns, Eventim integration, biometric login, and a unified design system.
+- Solo-built an **OCR** service for Brazilian tax receipts (NF-e/NFC-e) in Python/gRPC, chaining QR → Tesseract → PaddleOCR → Vision LLM (via API); raised accuracy from **28% to 75%** on a 1,138-image real-world dataset; deployed on Docker + Kubernetes.
 
-::: {.tech}
-`Go` `TypeScript` `Dart` `Python` `gRPC` `Protobuf` `NATS` `PostgreSQL` `Next.js 15` `React 19` `Flutter` `Docker` `Kubernetes` `Tilt`
+::: {.stack}
+Stack: Go · Python · TypeScript · Dart · gRPC · NATS · PostgreSQL · Next.js · React · Flutter · Docker · Kubernetes
 :::
 :::
 
 ::: {.role}
 ::: {.rolehead}
-::: {}
-::: {.role-title}
-Software Engineer
+[**Software Engineer** · Hubsell]{.role-title}
+[May 2022 – Dec 2024]{.role-period}
 :::
 
 ::: {.role-company}
-Hubsell — E-commerce Integration Platform
-:::
-:::
-
-::: {.role-period}
-May 2022 – Dec 2024
-:::
+E-commerce integration platform
 :::
 
-- Built frontend and integrations for Seller Center/Dashboard, connecting sellers to marketplaces and external APIs.
-- Integrated payment gateways (PagarMe, PinPag) and evolved critical product flows.
-- Shipped conversion-impacting features (POS and Shopping Assistant).
-- Improved UX/performance on heavy screens using ElasticSearch + React Query.
+- Built frontend and integrations for the **Seller Center**, the interface sellers use to run their sales on Mercado Livre, Amazon, Shopee, and other marketplaces.
+- Built the **POS (Point of Sale)** and **Shopping Assistant** features, aimed at seller conversion.
+- Integrated **payment gateways** (PagarMe, PinPag) into the seller dashboard.
+- Tackled loading bottlenecks on heavy screens (dashboards, sales panels) with **ElasticSearch**-backed search and client-side data caching via **React Query**.
+- Shipped a mobile app for Android and iOS with **Expo**.
 
-::: {.tech}
-`React` `Next.js` `Node.js` `MongoDB` `ElasticSearch` `Zustand` `React Query` `Expo`
+::: {.stack}
+Stack: React · Next.js · Node.js · MongoDB · ElasticSearch · Zustand · React Query · Expo · Firebase
 :::
 :::
 
 ::: {.role}
 ::: {.rolehead}
-::: {}
-::: {.role-title}
-Full-Stack Developer
+[**Full-Stack Developer** · 3 UP Tech]{.role-title}
+[Dec 2020 – May 2022]{.role-period}
 :::
 
 ::: {.role-company}
-3 UP Tech — 3Ponto Financial App
-:::
-:::
-
-::: {.role-period}
-2020 – 2022
-:::
+3Ponto — financial management platform (mobile app + web dashboard)
 :::
 
-- Built and maintained web and mobile apps end-to-end.
-- Backend development using a microservices architecture and legacy integrations.
-- Led frontend initiatives: feature delivery, bug fixes, and performance improvements.
+- Worked across the full product lifecycle — mobile app (**React Native**) and web dashboard (**React**) — from translating business requirements to shipping in production.
+- Developed backend services in a **microservices** architecture (Node.js/Express, PostgreSQL).
+- Led migrations and integrations with legacy systems.
+- Led frontend work: feature delivery, bug fixing, and performance tuning.
 
-::: {.tech}
-`React` `React Native` `Node.js` `PostgreSQL` `Express` `Microservices`
+::: {.stack}
+Stack: React · React Native · Node.js · Express · PostgreSQL · Microservices
 :::
 :::
 
 ::: {.role}
 ::: {.rolehead}
-::: {}
-::: {.role-title}
-Freelance Consultant
+[**Freelance Consultant — Data & Business Systems** · Upwork]{.role-title}
+[2016 – 2019]{.role-period}
 :::
 
-::: {.role-company}
-Upwork — Data & Business Systems
-:::
-:::
-
-::: {.role-period}
-2016 – 2019
-:::
+- Built **ETL** pipelines and **Power BI** dashboards for help desk and operations analytics.
+- Implemented an **ERP** (Odoo/OpenERP) with custom business workflows and automations.
+- Automated data models with **SQL** and **Python** for executive dashboards.
 :::
 
-- Built ETL pipelines and Power BI dashboards for help desk analytics.
-- Implemented ERP workflows (Odoo/OpenERP) with custom business processes.
-- Automated data models with SQL and Python for executive dashboards.
-
-::: {.tech}
-`Python` `SQL` `PostgreSQL` `MySQL` `Odoo` `Power BI`
-:::
-:::
-
-## Skills
-
-::: {.two-col}
-::: {.box}
-**AI Integration**<br />
-<span class="muted">Production LLM integration · Vision LLM via API · OCR pipeline · Ollama · MCP</span>
-:::
-::: {.box}
-**Frontend**<br />
-<span class="muted">React · Next.js · TypeScript · State (Zustand/Redux) · Storybook</span>
-:::
-::: {.box}
-**Backend**<br />
-<span class="muted">Go · Node.js · Python · gRPC · REST APIs · NATS · Microservices</span>
-:::
-::: {.box}
-**Data & Infra**<br />
-<span class="muted">PostgreSQL · MongoDB · Redis · Docker · Kubernetes · ElasticSearch · ETL/SQL</span>
-:::
-::: {.box}
-**Quality**<br />
-<span class="muted">Jest · Vitest · Playwright · CI/CD</span>
-:::
-:::
-
-## Education
-
-- M.Sc. studies in Computer Science (special/non-degree student, in progress) — Federal University of Uberlândia (UFU), 2026–present
-- B.B.A. in Business Administration — União de Faculdades Metropolitanas de Maringá, 2016
-
-## Personal Project
+## Education & Research
 
 ::: {.role}
 ::: {.rolehead}
-::: {}
-::: {.role-title}
-SEIF Protocol — Research on provenance of AI-generated artifacts
+[**M.Sc. in Computer Science** · Federal University of Uberlândia (PPGCO/UFU)]{.role-title}
+[2026 – in progress]{.role-period}
 :::
 
-::: {.role-company}
-Personal project · seifprotocol.com
+- **Research:** minimal representations of execution traces for systems observability — compact memory-access signatures that flag performance degradation (e.g., O(n log n) → O(n²)) without per-class calibration, with an explicit criterion for when the representation stops being sufficient.
+- **Method:** pre-registered hypotheses and reproducible experiments (TypeScript + Python); paper series in preparation.
+- **Research tooling — SEIF Protocol** ([seifprotocol.com](https://www.seifprotocol.com)): cryptographic provenance (Ed25519, time-anchoring via OpenTimestamps) and auditable governance for AI-assisted work, applied to the research itself. Public prototypes: [Carimbo](https://carimbo.seifprotocol.com) and [Vigília](https://vigilia.seifprotocol.com).
+:::
+
+::: {.role}
+::: {.rolehead}
+[**B.A. in Business Administration** · União de Faculdades Metropolitanas de Maringá]{.role-title}
+[2016]{.role-period}
 :::
 :::
 
-::: {.role-period}
-2026 – Present
-:::
-:::
+## Languages
 
-- Personal research project on cryptographic provenance (Ed25519, optional time-anchoring via OpenTimestamps) and auditable governance for AI-generated artifacts.
-- Motivated an academic publication on Zenodo (see Publications).
+::: {.skills}
+- [Portuguese]{.k} [Native]{.v}
+- [English]{.k} [C2 Proficient — EF SET certificate ([cert.efset.org/en/Eukv37](https://cert.efset.org/en/Eukv37))]{.v}
 :::
-
-## Publications
-
-- CARVALHO, A. C. A. de. **On the Unique Primitive Second-Order System with Golden-Ratio Damping: Mathematical Properties and Applications to AI Context Verification**. Zenodo, 2026. DOI: [10.5281/zenodo.19344678](https://doi.org/10.5281/zenodo.19344678).
