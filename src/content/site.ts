@@ -135,9 +135,12 @@ export const education: EducationItem[] = [
     highlights: [
       "Pesquisa: representações mínimas de traços de execução para observabilidade de sistemas — assinaturas compactas de acesso à memória que detectam degradação de desempenho (ex.: O(n log n) → O(n²)) sem calibração por classe, com critério explícito de quando a representação deixa de ser suficiente.",
       "Método: hipóteses pré-registradas e experimentos reprodutíveis (TypeScript + Python); série de artigos em preparação.",
+      "Artefato publicado: (D, δ): a two-feature signature for memory-access traces — código, dados, validação pré-registrada e análise de robustez, reproduzidos via CI (DOI 10.5281/zenodo.23198655).",
       "Ferramental de pesquisa — SEIF Protocol: proveniência criptográfica (Ed25519, ancoragem temporal via OpenTimestamps) e governança auditável do trabalho assistido por IA, aplicado na própria pesquisa.",
     ],
     links: [
+      { label: "DOI 10.5281/zenodo.23198655", href: "https://doi.org/10.5281/zenodo.23198655" },
+      { label: "GitHub: memory-access-signature", href: "https://github.com/and2carvalho/memory-access-signature" },
       { label: "seifprotocol.com", href: "https://www.seifprotocol.com" },
       { label: "Carimbo", href: "https://carimbo.seifprotocol.com" },
       { label: "Vigília", href: "https://vigilia.seifprotocol.com" },
