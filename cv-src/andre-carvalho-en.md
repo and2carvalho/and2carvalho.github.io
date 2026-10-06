@@ -163,7 +163,7 @@ Upwork — Data & Business Systems
 
 ## Education
 
-- Postgraduate studies in Business Intelligence (not completed) — Unicesumar, 2017–2018
+- M.Sc. studies in Computer Science (special/non-degree student, in progress) — Federal University of Uberlândia (UFU), 2026–present
 - B.B.A. in Business Administration — União de Faculdades Metropolitanas de Maringá, 2016
 
 ## Personal Project

@@ -163,7 +163,7 @@ Upwork — Data & Business Systems
 
 ## Formação
 
-- Pós-graduação em Business Intelligence (não concluída) — Unicesumar, 2017–2018
+- Mestrado em Ciência da Computação (aluno especial, em curso) — Universidade Federal de Uberlândia (UFU), 2026–presente
 - Graduação em Administração — União de Faculdades Metropolitanas de Maringá, 2016
 
 ## Projeto pessoal

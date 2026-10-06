@@ -172,9 +172,9 @@ export const publications: Publication[] = [
 
 export const education: EducationItem[] = [
   {
-    degree: "Pós-graduação em Business Intelligence (não concluída)",
-    institution: "Unicesumar",
-    period: "2017 – 2018",
+    degree: "Mestrado em Ciência da Computação (aluno especial) — em curso",
+    institution: "Universidade Federal de Uberlândia (UFU)",
+    period: "2026 – presente",
   },
   {
     degree: "Graduação em Administração",
