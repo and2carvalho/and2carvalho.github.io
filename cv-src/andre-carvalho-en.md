@@ -117,6 +117,7 @@ Stack: React · React Native · Node.js · Express · PostgreSQL · Microservice
 
 - **Research:** minimal representations of execution traces for systems observability — compact memory-access signatures that flag performance degradation (e.g., O(n log n) → O(n²)) without per-class calibration, with an explicit criterion for when the representation stops being sufficient.
 - **Method:** pre-registered hypotheses and reproducible experiments (TypeScript + Python); paper series in preparation.
+- **Published artifact:** *(D, δ): a two-feature signature for memory-access traces* — code, data, pre-registered validation and robustness analysis, reproduced in CI. DOI [10.5281/zenodo.23198655](https://doi.org/10.5281/zenodo.23198655) · [github.com/and2carvalho/memory-access-signature](https://github.com/and2carvalho/memory-access-signature).
 - **Research tooling — SEIF Protocol** ([seifprotocol.com](https://www.seifprotocol.com)): cryptographic provenance (Ed25519, time-anchoring via OpenTimestamps) and auditable governance for AI-assisted work, applied to the research itself. Public prototypes: [Carimbo](https://carimbo.seifprotocol.com) and [Vigília](https://vigilia.seifprotocol.com).
 :::
 
