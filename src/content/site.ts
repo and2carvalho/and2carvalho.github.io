@@ -26,6 +26,16 @@ export type AtAGlanceItem = {
   detail: string;
 };
 
+export type Publication = {
+  kind: string;
+  title: string;
+  description: string;
+  date: string;
+  doi: string;
+  href: string;
+  codeHref?: string;
+};
+
 export type EducationItem = {
   degree: string;
   institution: string;
@@ -43,38 +53,58 @@ export type Language = {
 export const site = {
   brand: "and2carvalho",
   name: "Andre C.A. de Carvalho",
-  role: "Desenvolvedor Full-Stack · Go · TypeScript · Python · Flutter",
-  location: "Uberlândia, MG, Brasil · Remoto, híbrido ou presencial",
+  role: "AI / LLM Engineer · Sistemas de agentes · RAG · Avaliação",
+  location: "Uberlândia, MG, Brasil · Disponível para trabalho remoto global",
   valueProp:
-    "7+ anos entregando produtos web e mobile em produção: microsserviços em Go (gRPC, NATS), frontends React/Next.js, apps Flutter e integrações de marketplaces e pagamentos.",
+    "Engenheiro de software com 7+ anos em produtos de produção. Hoje, aplico essa base na construção de sistemas de IA confiáveis: LLMs, RAG, agentes, avaliação e automação.",
   summary:
-    "Experiência prática com IA aplicada em produção: pipeline de OCR com Vision LLM que elevou a acurácia de 28% para 75%. Base sólida em dados (ETL, SQL, Python). Mestrado em Ciência da Computação em curso na UFU, com pesquisa em observabilidade de sistemas e verificação de comportamento computacional.",
+    "Mestrando em Ciência da Computação na UFU. Autor de livro-texto com DOI sobre engenharia de contexto para agentes de IA e de pesquisa reprodutível sobre observabilidade de sistemas. Experiência aplicada inclui um pipeline de OCR com Vision LLM que elevou a acurácia de 28% para 75%.",
   links: {
     github: "https://github.com/and2carvalho",
     linkedin: "https://linkedin.com/in/and2carvalho",
     email: "and2carvalho@gmail.com",
-    seifSite: "https://www.seifprotocol.com",
     cvPt: "/cv/andre-carvalho-desenvolvedor.pdf",
     cvEn: "/cv/andre-carvalho-developer.pdf",
   },
   metrics: [
-    { label: "Experiência", value: "7+ anos" },
-    { label: "OCR em produção", value: "28% → 75%" },
+    { label: "Engenharia em produção", value: "7+ anos" },
+    { label: "OCR com Vision LLM", value: "28% → 75%" },
+    { label: "Publicações com DOI", value: "2" },
   ] satisfies Metric[],
   proofPills: [
-    { label: "Backend", detail: "Go · Python · gRPC · NATS · Microsserviços" },
-    { label: "Frontend & Mobile", detail: "React · Next.js · TypeScript · Flutter" },
-    { label: "Integrações", detail: "Mercado Livre · Amazon · Shopee · PagarMe · PinPag" },
+    { label: "Agentes & contexto", detail: "RAG · seleção sob orçamento · governança" },
+    { label: "IA em produção", detail: "Vision LLM · Python · gRPC · Kubernetes" },
+    { label: "Pesquisa reprodutível", detail: "TypeScript · Python · pré-registro · CI" },
   ] satisfies ProofPill[],
   atAGlance: [
-    { title: "Backend", detail: "Go e Python — gRPC, NATS JetStream, microsserviços, Outbox Pattern" },
-    { title: "Frontend & Mobile", detail: "React/Next.js e Flutter, com design systems e apps white-label" },
-    { title: "IA aplicada", detail: "Vision LLM via API em pipeline de OCR em produção" },
-    { title: "Integrações", detail: "marketplaces (Mercado Livre, Amazon, Shopee) e pagamentos (PagarMe, PinPag)" },
-    { title: "Dados", detail: "ETL/SQL, ElasticSearch, Power BI" },
-    { title: "Pesquisa", detail: "Mestrado em Ciência da Computação (UFU) — observabilidade de sistemas" },
+    { title: "Posicionamento", detail: "Engenharia de IA/LLMs com base forte em software de produção." },
+    { title: "Pesquisa atual", detail: "Mestrado em Ciência da Computação na UFU, com foco em IA e observabilidade." },
+    { title: "Autor publicado", detail: "Livro-texto sobre engenharia de contexto para agentes de IA, com DOI." },
+    { title: "Entrega comprovada", detail: "OCR híbrido com Vision LLM: 28% → 75% em 1.138 imagens reais." },
   ] satisfies AtAGlanceItem[],
 };
+
+export const publications: Publication[] = [
+  {
+    kind: "Livro-texto · Zenodo · 2026",
+    title: "Contexto para Agentes de IA",
+    description:
+      "Fundamentos, algoritmos e sistemas para gerenciamento, engenharia, design e administração do contexto que agentes baseados em LLMs recebem para agir. O livro cobre seleção sob orçamento, memória, proveniência, autoridade, orquestração multiagente, segurança e avaliação.",
+    date: "19 out. 2026",
+    doi: "10.5281/zenodo.23476445",
+    href: "https://doi.org/10.5281/zenodo.23476445",
+  },
+  {
+    kind: "Software de pesquisa · Zenodo · 2026",
+    title: "(D, δ): a two-feature signature for memory-access traces",
+    description:
+      "Assinatura de duas variáveis para detectar degradação de desempenho no mesmo código sem calibração por classe. Implementações TypeScript e Python reproduzem os resultados, com validação pré-registrada e análise de robustez.",
+    date: "7 out. 2026 · versão v0.1.0",
+    doi: "10.5281/zenodo.23198655",
+    href: "https://doi.org/10.5281/zenodo.23198655",
+    codeHref: "https://github.com/and2carvalho/memory-access-signature",
+  },
+];
 
 export const experiences: Experience[] = [
   {
@@ -133,17 +163,15 @@ export const education: EducationItem[] = [
     institution: "Universidade Federal de Uberlândia (PPGCO/UFU)",
     period: "2026 – atual",
     highlights: [
-      "Pesquisa: representações mínimas de traços de execução para observabilidade de sistemas — assinaturas compactas de acesso à memória que detectam degradação de desempenho (ex.: O(n log n) → O(n²)) sem calibração por classe, com critério explícito de quando a representação deixa de ser suficiente.",
-      "Método: hipóteses pré-registradas e experimentos reprodutíveis (TypeScript + Python); série de artigos em preparação.",
-      "Artefato publicado: (D, δ): a two-feature signature for memory-access traces — código, dados, validação pré-registrada e análise de robustez, reproduzidos via CI (DOI 10.5281/zenodo.23198655).",
-      "Ferramental de pesquisa — SEIF Protocol: proveniência criptográfica (Ed25519, ancoragem temporal via OpenTimestamps) e governança auditável do trabalho assistido por IA, aplicado na própria pesquisa.",
+      "Linha aplicada: sistemas de IA, automação de agentes e observabilidade de software, unindo experimentos reprodutíveis à engenharia de produção.",
+      "Pesquisa publicada: representações mínimas de traços de execução para observabilidade. A assinatura (D, δ) detecta degradação de O(n log n) para O(n²) no mesmo código, sem calibração por classe.",
+      "Método: hipóteses pré-registradas e implementações independentes em TypeScript e Python que reproduzem os resultados via CI.",
+      "Livro-texto publicado: Contexto para Agentes de IA, sobre como projetar e avaliar o contexto de sistemas baseados em LLMs, com ênfase em RAG, memória, autoridade, orquestração e avaliação.",
     ],
     links: [
-      { label: "DOI 10.5281/zenodo.23198655", href: "https://doi.org/10.5281/zenodo.23198655" },
+      { label: "Livro · DOI 10.5281/zenodo.23476445", href: "https://doi.org/10.5281/zenodo.23476445" },
+      { label: "Pesquisa · DOI 10.5281/zenodo.23198655", href: "https://doi.org/10.5281/zenodo.23198655" },
       { label: "GitHub: memory-access-signature", href: "https://github.com/and2carvalho/memory-access-signature" },
-      { label: "seifprotocol.com", href: "https://www.seifprotocol.com" },
-      { label: "Carimbo", href: "https://carimbo.seifprotocol.com" },
-      { label: "Vigília", href: "https://vigilia.seifprotocol.com" },
     ],
   },
   {
@@ -164,8 +192,8 @@ export const languages: Language[] = [
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "IA aplicada",
-    tags: ["Vision LLM via API", "Pipeline de OCR", "Ollama", "MCP", "Proveniência de artefatos de IA"],
+    title: "IA, LLMs & Agentes",
+    tags: ["Sistemas de agentes", "RAG", "Avaliação de LLMs", "Engenharia de contexto", "MCP", "Vision LLM via API", "Ollama"],
   },
   {
     title: "Backend",
