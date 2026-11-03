@@ -1,13 +1,13 @@
 ---
 lang: en
-pagetitle: Andre C.A. de Carvalho — Full-Stack Developer
+pagetitle: Andre C.A. de Carvalho — AI / LLM Engineer
 ---
 
 ::: {.topbar}
 # Andre C.A. de Carvalho
 
 ::: {.subhead-title}
-Full-Stack Developer · Go · TypeScript · Python · Flutter
+AI / LLM Engineer · Agent systems · RAG · Evaluation
 :::
 
 ::: {.contact}
@@ -19,18 +19,40 @@ Uberlândia, MG, Brazil · Open to remote, hybrid, or on-site<br />
 ## Summary
 
 ::: {.summary}
-Full-Stack Developer with 7+ years shipping web and mobile products to production: Go microservices (gRPC, NATS), React/Next.js frontends, Flutter apps, and marketplace and payment integrations. Hands-on applied AI in production: a Vision LLM–backed OCR pipeline that raised accuracy from 28% to 75%. Strong data background (ETL, SQL, Python). Currently pursuing an M.Sc. in Computer Science at UFU, researching systems observability and verification of computational behavior.
+Software engineer deliberately transitioning into AI/LLM Engineering, combining 7+ years of shipping web and mobile products with applied academic research. M.Sc. student in Computer Science at UFU. Author of a DOI-registered university textbook on context engineering for AI agents and of reproducible systems-observability research. Hands-on experience with RAG, agent systems, evaluation of LLM-based systems, and automation, alongside a Vision LLM–backed OCR pipeline that raised accuracy from 28% to 75%.
 :::
 
 ## Skills
 
 ::: {.skills}
-- [Applied AI]{.k} [Vision LLM via API · OCR pipeline · Ollama · MCP · AI artifact provenance]{.v}
+- [AI, LLMs & Agents]{.k} [RAG · agent systems · evaluation of LLM-based systems · context engineering · MCP · Vision LLM via API · Ollama]{.v}
 - [Backend]{.k} [Go · Python · Node.js · gRPC · REST · NATS JetStream · Microservices · Outbox Pattern · KrakenD]{.v}
 - [Frontend & Mobile]{.k} [React · Next.js · TypeScript · React Query · Zustand · Storybook · Flutter · React Native]{.v}
 - [Data & Infra]{.k} [PostgreSQL · MongoDB · Redis · ElasticSearch · Docker · Kubernetes · ETL/SQL · Power BI]{.v}
 - [Integrations]{.k} [Mercado Livre · Amazon · Shopee · PagarMe · PinPag · Eventim]{.v}
 - [Quality]{.k} [Jest · Vitest · Playwright · CI/CD]{.v}
+:::
+
+## Publications & Research
+
+::: {.role}
+::: {.rolehead}
+[**Contexto para Agentes de IA: Gerenciamento, Engenharia, Design e Administração** · University textbook, Zenodo]{.role-title}
+[Oct 2026]{.role-period}
+:::
+
+- University textbook on context engineering for LLM-based agents: selection under budget, RAG, memory, provenance, authorization, multi-agent orchestration, security, and evaluation.
+- Open-access publication with DOI [10.5281/zenodo.23476445](https://doi.org/10.5281/zenodo.23476445).
+:::
+
+::: {.role}
+::: {.rolehead}
+[**(D, δ): a two-feature signature for memory-access traces** · Research software, Zenodo]{.role-title}
+[Oct 2026]{.role-period}
+:::
+
+- Master's research: a two-feature signature that flags O(n log n) to O(n²) degradation in the same code without per-class calibration.
+- Independent TypeScript and Python implementations, a deterministic corpus, pre-registered validation, and robustness analysis. Code: [github.com/and2carvalho/memory-access-signature](https://github.com/and2carvalho/memory-access-signature) · DOI [10.5281/zenodo.23198655](https://doi.org/10.5281/zenodo.23198655).
 :::
 
 ## Experience
@@ -115,10 +137,9 @@ Stack: React · React Native · Node.js · Express · PostgreSQL · Microservice
 [2026 – in progress]{.role-period}
 :::
 
-- **Research:** minimal representations of execution traces for systems observability — compact memory-access signatures that flag performance degradation (e.g., O(n log n) → O(n²)) without per-class calibration, with an explicit criterion for when the representation stops being sufficient.
-- **Method:** pre-registered hypotheses and reproducible experiments (TypeScript + Python); paper series in preparation.
-- **Published artifact:** *(D, δ): a two-feature signature for memory-access traces* — code, data, pre-registered validation and robustness analysis, reproduced in CI. DOI [10.5281/zenodo.23198655](https://doi.org/10.5281/zenodo.23198655) · [github.com/and2carvalho/memory-access-signature](https://github.com/and2carvalho/memory-access-signature).
-- **Research tooling — SEIF Protocol** ([seifprotocol.com](https://www.seifprotocol.com)): cryptographic provenance (Ed25519, time-anchoring via OpenTimestamps) and auditable governance for AI-assisted work, applied to the research itself. Public prototypes: [Carimbo](https://carimbo.seifprotocol.com) and [Vigília](https://vigilia.seifprotocol.com).
+- **Applied research line:** AI systems, agent automation, and software observability, connecting reproducible research to production engineering.
+- **Research:** compact execution-trace signatures that flag performance degradation without per-class calibration; pre-registered hypotheses and reproducible TypeScript + Python experiments.
+- **Scholarly output:** a university textbook and research software published on Zenodo, both with DOIs. The previous section provides the public, verifiable links.
 :::
 
 ::: {.role}

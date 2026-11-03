@@ -2,23 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Andre C.A. de Carvalho - Software Engineer",
+  title: "André Carvalho — AI / LLM Engineer",
   description:
-    "Software Engineer with 5+ years shipping products. Full-stack, backend systems, marketplace integrations, and AI artifact provenance tooling.",
+    "AI / LLM Engineer building reliable agent systems, RAG, evaluation, and workflow automation on a 7+ year production-software foundation.",
   metadataBase: new URL("https://and2carvalho.github.io"),
   openGraph: {
-    title: "Andre C.A. de Carvalho - Software Engineer",
+    title: "André Carvalho — AI / LLM Engineer",
     description:
-      "Software Engineer with 5+ years shipping products. Full-stack, backend systems, marketplace integrations, and AI artifact provenance tooling.",
+      "AI / LLM engineering, applied research, agent systems, RAG, evaluation, and production software delivery.",
     url: "https://and2carvalho.github.io",
     siteName: "and2carvalho",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Andre C.A. de Carvalho - Software Engineer",
-    description:
-      "Software Engineer with 5+ years shipping products. Full-stack, backend systems, marketplace integrations, and AI artifact provenance tooling.",
+    title: "André Carvalho — AI / LLM Engineer",
+    description: "AI / LLM engineering, applied research, and production software systems.",
   },
 };
 
