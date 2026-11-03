@@ -93,6 +93,7 @@ export const publications: Publication[] = [
     date: "19 out. 2026",
     doi: "10.5281/zenodo.23476445",
     href: "https://doi.org/10.5281/zenodo.23476445",
+    codeHref: "https://github.com/and2carvalho/contexto-para-agentes-de-ia",
   },
   {
     kind: "Software de pesquisa · Zenodo · 2026",
@@ -170,6 +171,7 @@ export const education: EducationItem[] = [
     ],
     links: [
       { label: "Livro · DOI 10.5281/zenodo.23476445", href: "https://doi.org/10.5281/zenodo.23476445" },
+      { label: "GitHub: contexto-para-agentes-de-ia", href: "https://github.com/and2carvalho/contexto-para-agentes-de-ia" },
       { label: "Pesquisa · DOI 10.5281/zenodo.23198655", href: "https://doi.org/10.5281/zenodo.23198655" },
       { label: "GitHub: memory-access-signature", href: "https://github.com/and2carvalho/memory-access-signature" },
     ],
